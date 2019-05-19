@@ -17,8 +17,7 @@
     <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
     <link rel="stylesheet" href="css/aos.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="SlickNav/slicknav.css" />
+    <link rel="stylesheet" href="css/style.css">    
   </head>
   <body>
   
@@ -47,7 +46,9 @@
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">                   
                 <li><a href="#section0">Home</a></li>
                 <li><a href="#section1">To be With</a></li>
-                <li><a href="#section2">About us</a></li>              
+                <li><a href="#section2">Services</a></li>
+                <li><a href="#section3">Testimonial</a></li>
+                <li><a href="#section4">About us</a></li>              
                 <!-- <li><a href="booking.html">Book Online</a></li> -->
               </ul>
             </nav>
@@ -83,10 +84,9 @@
 
             <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
               
-
-              <h1 class="text-white font-weight-light">Never Stop Exploring</h1>
-              <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga est inventore ducimus repudiandae.</p>
-              <p><a href="#" class="btn btn-primary py-3 px-5 text-white">Book Now!</a></p>
+              <h1 class="text-white font-weight-light">MAKE YOUR OWN SPECIAL TRAVEL EXPERIENCE.</h1>
+              <p class="mb-5">To-Be-With와 함께 당신만의 특별한 여행경험을 만들고, 다같이 공유 해보세요!</p>
+              <p><a href="#" class="btn btn-primary py-3 px-5 text-white">To Be With!</a></p>
 
             </div>
           </div>
@@ -98,9 +98,9 @@
           <div class="row align-items-center justify-content-center text-center">
 
             <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
-              <h1 class="text-white font-weight-light">Love The Places</h1>
-              <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga est inventore ducimus repudiandae.</p>
-              <p><a href="#" class="btn btn-primary py-3 px-5 text-white">Book Now!</a></p>
+              <h1 class="text-white font-weight-light">FIND ACCOMPANY TO TRAVEL WITH YOU</h1>
+              <p class="mb-5">To-Be-With와 함께, 여행을 같이할 동료를 구해보세요!</p>
+              <p><a href="#" class="btn btn-primary py-3 px-5 text-white">To Be With!</a></p>
             </div>
           </div>
         </div>
@@ -128,7 +128,7 @@
                 <h3 class="unit-1-heading">Find Your Travel Partners</h3>
               </div>
             </a>
-          </div>          
+          </div>                 
         </div>
       </div>
     
@@ -137,13 +137,18 @@
 
     <div class="site-section" id = "section2">
       <div class="container">
+      	<div class="row justify-content-center mb-5">
+          <div class="col-md-7">
+            <h2 class="font-weight-light text-black text-center">Services</h2>
+          </div>
+        </div>
         <div class="row align-items-stretch">
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
             <div class="unit-4 d-flex">
               <div class="unit-4-icon mr-4"><span class="text-primary flaticon-airplane"></span></div>
               <div>
                 <h3>Travel Experience Share</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                <p>당신의 여행을 공유해보세요. 그리고 다른 사람들의 여행을 읽어보세요.</p>
                 <p><a href="#">Learn More</a></p>
               </div>
             </div>
@@ -153,250 +158,30 @@
               <div class="unit-4-icon mr-4"><span class="text-primary flaticon-ship"></span></div>
               <div>
                 <h3>Travel Partners Search</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                <p><a href="#">Learn More</a></p>
-              </div>
-            </div>
-          </div>          
-        </div>
-      </div>
-    </div>
-  
-
-
-
-
-    
-    <div class="site-section block-13 bg-light" id = "section3">
-  
-
-    <div class="container">
-        <div class="row justify-content-center mb-5">
-          <div class="col-md-7">
-            <h2 class="font-weight-light text-black text-center">Testimonials</h2>
-          </div>
-        </div>
-
-        <div class="nonloop-block-13 owl-carousel">
-
-          <div class="item">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-6 mb-5">
-                  <img src="images/img_1.jpg" alt="Image" class="img-md-fluid">
-                </div>
-                <div class="overlap-left col-lg-6 bg-white p-md-5 align-self-center">
-                  <p class="text-black lead">&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique dolorem quisquam laudantium, incidunt id laborum, tempora aliquid labore minus. Nemo maxime, veniam! Fugiat odio nam eveniet ipsam atque, corrupti porro&rdquo;</p>
-                  <p class="">&mdash; <em>James Martin</em>, <a href="#">Traveler</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-6 mb-5">
-                  <img src="images/img_2.jpg" alt="Image" class="img-md-fluid">
-                </div>
-                <div class="overlap-left col-lg-6 bg-white p-md-5 align-self-center">
-                  <p class="text-black lead">&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique dolorem quisquam laudantium, incidunt id laborum, tempora aliquid labore minus. Nemo maxime, veniam! Fugiat odio nam eveniet ipsam atque, corrupti porro&rdquo;</p>
-                  <p class="">&mdash; <em>Clair Augustin</em>, <a href="#">Traveler</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-6 mb-5">
-                  <img src="images/img_4.jpg" alt="Image" class="img-md-fluid">
-                </div>
-                <div class="overlap-left col-lg-6 bg-white p-md-5 align-self-center">
-                  <p class="text-black lead">&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique dolorem quisquam laudantium, incidunt id laborum, tempora aliquid labore minus. Nemo maxime, veniam! Fugiat odio nam eveniet ipsam atque, corrupti porro&rdquo;</p>
-                  <p class="">&mdash; <em>James Martin</em>, <a href="#">Traveler</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-
-
-    <div class="site-section" id = "section4">
-      
-      <div class="container">
-        <div class="row justify-content-center mb-5">
-          <div class="col-md-7 text-center">
-            <h2 class="font-weight-light text-black">Our Destinations</h2>
-            <p class="color-black-opacity-5">Choose Your Next Destination</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-            <a href="#" class="unit-1 text-center">
-              <img src="images/01-greece.jpg" alt="Image" class="img-fluid">
-              <div class="unit-1-text">
-                <strong class="text-primary mb-2 d-block">$590</strong>
-                <h3 class="unit-1-heading">Santorini, Greece</h3>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-            <a href="#" class="unit-1 text-center">
-              <img src="images/02-rome.jpg" alt="Image" class="img-fluid">
-              <div class="unit-1-text">
-                <strong class="text-primary mb-2 d-block">$390</strong>
-                <h3 class="unit-1-heading">Rome, Italy</h3>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-            <a href="#" class="unit-1 text-center">
-              <img src="images/03-japan.jpg" alt="Image" class="img-fluid">
-              <div class="unit-1-text">
-                <strong class="text-primary mb-2 d-block">$390</strong>
-                <h3 class="unit-1-heading">Mount Fuji, Japan</h3>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-            <a href="#" class="unit-1 text-center">
-              <img src="images/04-dubai.jpg" alt="Image" class="img-fluid">
-              <div class="unit-1-text">
-                <strong class="text-primary mb-2 d-block">$320</strong>
-                <h3 class="unit-1-heading">Camels, Dubai</h3>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-            <a href="#" class="unit-1 text-center">
-              <img src="images/05-london.jpg" alt="Image" class="img-fluid">
-              <div class="unit-1-text">
-                <strong class="text-primary mb-2 d-block">$290</strong>
-                <h3 class="unit-1-heading">Elizabeth Tower, London</h3>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-            <a href="#" class="unit-1 text-center">
-              <img src="images/06-australia.jpg" alt="Image" class="img-fluid">
-              <div class="unit-1-text">
-                <strong class="text-primary mb-2 d-block">$390</strong>
-                <h3 class="unit-1-heading">Opera House, Australia</h3>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    
-    </div>
-
-    <!-- <div class="site-section bg-light">
-      
-    </div> -->
-
-
-    <div class="site-blocks-cover overlay inner-page-cover" style="background-image: url(images/hero_bg_2.jpg); background-attachment: fixed;">
-      <div class="container">
-        <div class="row align-items-center justify-content-center text-center">
-
-          <div class="col-md-7" data-aos="fade-up" data-aos-delay="400">
-            <a href="https://vimeo.com/channels/staffpicks/93951774" class="play-single-big mb-4 d-inline-block popup-vimeo"><span class="icon-play"></span></a>
-            <h2 class="text-white font-weight-light mb-5 h1">Experience Our Outstanding Services</h2>
-            
-          </div>
-        </div>
-      </div>
-    </div>  
-
-    <div class="site-section bg-light" id = "section2">
-      <div class="container">
-        <div class="row justify-content-center mb-5">
-          <div class="col-md-7 text-center">
-            <h2 class="font-weight-light text-black">Our Services</h2>
-            <p class="color-black-opacity-5">We Offer The Following Services</p>
-          </div>
-        </div>
-        <div class="row align-items-stretch">
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-            <div class="unit-4 d-flex">
-              <div class="unit-4-icon mr-4"><span class="text-primary flaticon-airplane"></span></div>
-              <div>
-                <h3>Air Ticketing</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                <p>같이 여행할 동료를 구해보세요. 당신의 여행을 더 즐겁게 만들어요.</p>
                 <p><a href="#">Learn More</a></p>
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
             <div class="unit-4 d-flex">
               <div class="unit-4-icon mr-4"><span class="text-primary flaticon-ship"></span></div>
               <div>
-                <h3>Cruises</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                <h3>Another Additional Functions</h3>
+                <p>다른 기능들도 사용해보세요. 다양한 기능들이 여러분의 여행을 책임집니다.</p>
                 <p><a href="#">Learn More</a></p>
               </div>
             </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-            <div class="unit-4 d-flex">
-              <div class="unit-4-icon mr-4"><span class="text-primary flaticon-route"></span></div>
-              <div>
-                <h3>Tour Packages</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                <p><a href="#">Learn More</a></p>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-            <div class="unit-4 d-flex">
-              <div class="unit-4-icon mr-4"><span class="text-primary flaticon-hotel"></span></div>
-              <div>
-                <h3>Hotel Accomodations</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                <p><a href="#">Learn More</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-            <div class="unit-4 d-flex">
-              <div class="unit-4-icon mr-4"><span class="text-primary flaticon-sailboat"></span></div>
-              <div>
-                <h3>Sea Explorations</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                <p><a href="#">Learn More</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-            <div class="unit-4 d-flex">
-              <div class="unit-4-icon mr-4"><span class="text-primary flaticon-ski"></span></div>
-              <div>
-                <h3>Ski Experiences</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                <p><a href="#">Learn More</a></p>
-              </div>
-            </div>
-          </div>
-
+          </div>           
         </div>
       </div>
     </div>
-
-
-    <div class="site-section" id = "section3">
+	
+	<div class="site-section" id = "section3">
       <div class="container">
         <div class="row justify-content-center mb-5">
           <div class="col-md-7 text-center">
-            <h2 class="font-weight-light text-black">Our Blog</h2>
+            <h2 class="font-weight-light text-black">Testiomals</h2>
             <p class="color-black-opacity-5">See Our Daily News &amp; Updates</p>
           </div>
         </div>
@@ -426,13 +211,60 @@
       </div>
     </div>
     
-    <div class="site-section border-top" >
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-md-12">
-            <h2 class="mb-5 text-black">Want To Travel With Us?</h2>
-            <p class="mb-0"><a href="booking.html" class="btn btn-primary py-3 px-5 text-white">Book Now</a></p>
+    <div class="site-section block-13 bg-light" id = "section4">
+
+    <div class="container">
+   	
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-7">
+            <h2 class="font-weight-light text-black text-center">About us</h2>
           </div>
+        </div>
+
+        <div class="nonloop-block-13 owl-carousel">
+
+          <div class="item">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6 mb-5">
+                  <img src="images/img_1.jpg" alt="Image" class="img-md-fluid">
+                </div>
+                <div class="overlap-left col-lg-6 bg-white p-md-5 align-self-center">
+                  <p class="text-black lead">&ldquo;2017038098 소프트웨어학과 박한수 &rdquo;</p>
+                  <p class="">&mdash; <em>박한수</em>, <a href="#">Developer</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6 mb-5">
+                  <img src="images/img_2.jpg" alt="Image" class="img-md-fluid">
+                </div>
+                <div class="overlap-left col-lg-6 bg-white p-md-5 align-self-center">
+                  <p class="text-black lead">&ldquo;2017038106 소프트웨어학과 권용균 &rdquo;</p>
+                  <p class="">&mdash; <em>권용균</em>, <a href="#">Developer</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6 mb-5">
+                  <img src="images/img_4.jpg" alt="Image" class="img-md-fluid">
+                </div>
+                <div class="overlap-left col-lg-6 bg-white p-md-5 align-self-center">
+                  <p class="text-black lead">&ldquo;2016039011 소프트웨어학과 홍주미 &rdquo;</p>
+                  <p class="">&mdash; <em>홍주미</em>, <a href="#">Developer</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -456,18 +288,15 @@
               </div>
               <div class="col-md-6 col-lg-6">
                 <ul class="list-unstyled">
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Destination</a></li>
-                  <li><a href="#">Services</a></li>
-                  <li><a href="#">About</a></li>
+                 	<li><a href="#section0">Home</a></li>
+	                <li><a href="#section1">To be With</a></li>
+	                <li><a href="#section2">Services</a></li>
+	                <li><a href="#section3">Testimonial</a></li>	             
                 </ul>
               </div>
               <div class="col-md-6 col-lg-6">
                 <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Privacy Policy</a></li>
-                  <li><a href="#">Contact Us</a></li>
-                  <li><a href="#">Discounts</a></li>
+                  <li><a href="#section4">About us</a></li>                  
                 </ul>
               </div>
             </div>
@@ -530,7 +359,7 @@
   <script src="js/bootstrap-datepicker.min.js"></script>
   <script src="js/aos.js"></script>
   <script src="js/main.js"></script>
-  <script src="SlickNav/jquery.slicknav.min.js"></script>
+  <script src="js/slick.min.js"></script>
   <script src="js/scroll.js"></script>
     
   </body>
