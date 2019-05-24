@@ -9,6 +9,8 @@ public class TravelVo {
 	private Date travelDate;
 	private String country;
 	private String region;
+	
+	private int current_Count;
 	private int max_Count;
 	
 	public int getTravelNum() {
@@ -46,6 +48,12 @@ public class TravelVo {
 	}
 	public void setMax_Count(int max_Count) {
 		this.max_Count = max_Count;
+	}
+	public int getCurrent_Count() {
+		return current_Count;
+	}
+	public void setCurrent_Count(int current_Count) {
+		this.current_Count = current_Count;
 	}
 	
 }

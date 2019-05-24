@@ -3,9 +3,9 @@ package vo;
 public class AdminVo {
 	
 	private int adminNum;
-	private String Id;
+	private String id;	
 	private String pw;
-	private String nickName;
+	private String name;
 	
 	public int getAdminNum() {
 		return adminNum;
@@ -14,10 +14,10 @@ public class AdminVo {
 		this.adminNum = adminNum;
 	}
 	public String getId() {
-		return Id;
+		return id;
 	}
 	public void setId(String id) {
-		Id = id;
+		this.id = id;
 	}
 	public String getPw() {
 		return pw;
@@ -25,11 +25,11 @@ public class AdminVo {
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
-	public String getNickName() {
-		return nickName;
+	public String getName() {
+		return name;
 	}
-	public void setNickName(String nickName) {
-		this.nickName = nickName;
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 }

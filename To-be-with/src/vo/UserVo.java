@@ -12,8 +12,8 @@ public class UserVo {
 	private Date date_Of_Birth;
 	private String phone_Number;
 	private String kakao_ID;
-	private String passport_Image;
-	private String identification_Image;
+	private boolean isApproved;
+	
 	
 	public int getUserNum() {
 		return userNum;
@@ -63,16 +63,10 @@ public class UserVo {
 	public void setKakao_ID(String kakao_ID) {
 		this.kakao_ID = kakao_ID;
 	}
-	public String getPassport_Image() {
-		return passport_Image;
+	public boolean isApproved() {
+		return isApproved;
 	}
-	public void setPassport_Image(String passport_Image) {
-		this.passport_Image = passport_Image;
-	}
-	public String getIdentification_Image() {
-		return identification_Image;
-	}
-	public void setIdentification_Image(String identification_Image) {
-		this.identification_Image = identification_Image;
+	public void setApproved(boolean isApproved) {
+		this.isApproved = isApproved;
 	}
 }
