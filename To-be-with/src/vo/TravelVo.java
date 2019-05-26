@@ -6,7 +6,7 @@ public class TravelVo {
 
 	private int travelNum;
 	private int userNum;
-	private Date travelDate;
+	private String travelDate;
 	private String country;
 	private String region;
 	
@@ -32,10 +32,10 @@ public class TravelVo {
 	public void setUserNum(int userNum) {
 		this.userNum = userNum;
 	}
-	public Date getTravelDate() {
+	public String getTravelDate() {
 		return travelDate;
 	}
-	public void setTravelDate(Date travelDate) {
+	public void setTravelDate(String travelDate) {
 		this.travelDate = travelDate;
 	}
 	public String getCountry() {

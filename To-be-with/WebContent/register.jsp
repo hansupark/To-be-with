@@ -6,9 +6,9 @@
 <meta charset="EUC-KR">
 <title>To be with Register</title>
 
-<link type="text/css" rel="stylesheet" href="register.css"/>
-<link type="text/css" rel="stylesheet" href="all.css"/>
-<link type="text/css" rel="stylesheet" href="bootstrap.min.css"/>
+<link type="text/css" rel="stylesheet" href="css/register.css"/>
+<link type="text/css" rel="stylesheet" href="css/all.css"/>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
 
 
 </head>

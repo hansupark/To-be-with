@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import controller.travel.TravelSearchController;
+
 
 public class FrontController extends HttpServlet{
 
@@ -16,6 +18,7 @@ public class FrontController extends HttpServlet{
 	public void init(ServletConfig config) throws ServletException
 	{
 		list = new HashMap<String, Controller>();
+		list.put("/travelSearch.do",new TravelSearchController());
 	}
 	
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
