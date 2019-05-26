@@ -13,6 +13,13 @@ public class TravelVo {
 	private int current_Count;
 	private int max_Count;
 	
+	public TravelVo()
+	{
+		country = null;
+		region = null;
+		travelDate = null;
+	}
+	
 	public int getTravelNum() {
 		return travelNum;
 	}
