@@ -25,12 +25,14 @@ public class ApplyService {
 		if(vo == null)
 		{
 			return 0;
-		}
-		
+		}		
 		TravelVo travel = new TravelVo();
 		travel.setTravelNum(vo.getTravelNum());
 		travel = service_travel.getTravel(travel);
-		
-		return 1;
+		if(travel.getMax_Count() == travel.getCurrent_Count()) //해당 travel이 full인 경우
+		{
+			return 0;
+		}
+		return dao_apply.insertApply(vo);
 	}
 }

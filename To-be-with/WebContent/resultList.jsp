@@ -19,7 +19,8 @@
 	{
 		out.println(String.format("<a href =\"javascript:loadModal(%s,%s);\">%s</a>","\'" + travel.getTitle() + "\'", "\'" +travel.getContent() + "\'",travel.getTitle())
 				+ " " + travel.getCountry() + " " + travel.getRegion() + " " + travel.getTravelDate() + " " 
-				+ travel.getCurrent_Count() + "/" + travel.getMax_Count() + "<br>");
+				+ travel.getCurrent_Count() + "/" + travel.getMax_Count());
+		out.println(String.format("<button onclick = applyInsert(%d,%d);>신청</button><br>",travel.getTravelNum(),1)); //아직 login기능 구현 안되서 1로 대체	
 	}
 	%>
 	<!-- modal -->
@@ -51,6 +52,7 @@
 <!-- Full Height Modal Right -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<script src="js/travelSearch.js"></script>
+<script src="js/travel.js"></script>
+<script src="js/apply.js"></script>
 </body>
 </html>

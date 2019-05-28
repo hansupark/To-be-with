@@ -70,7 +70,7 @@ public class ApplyDao {
 		try
 		{
 			conn = connect();
-			sql = "insert into apply(userNum,travelNum) values(?,?)";
+			sql = String.format("insert into apply(userNum,travelNum) values(%d,%d)",vo.getUserNum(),vo.getTravelNum());
 			psmt = conn.prepareStatement(sql);
 			result = psmt.executeUpdate();		
 		}

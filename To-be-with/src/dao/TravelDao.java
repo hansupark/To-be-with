@@ -117,12 +117,14 @@ public class TravelDao {
 				travel.setTravelDate(format.format(rs.getDate("travelDate")));		
 				travel.setTitle(rs.getString("title"));
 				travel.setContent(rs.getString("content"));
+				travel.setMax_Count(rs.getInt("maxCount"));
+				travel.setCurrent_Count(rs.getInt("currentCount"));
 				list.add(travel);
 			}				
 		}
 		catch(Exception e)
 		{
-			System.out.println("exception 惯积 : " + e);
+			System.out.println("TravelDao : getTravelList -> exception 惯积 : " + e);
 		}
 		finally
 		{
@@ -140,13 +142,13 @@ public class TravelDao {
 		String sql = null;		
 		try
 		{
-			int travelNum = vo.getTravelNum();			
+			int travelNum = vo.getTravelNum();
+			travel = new TravelVo();
 			conn = connect();
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-			sql = "select * from travel where travelNum = ?";
+			sql = String.format("select * from travel where travelNum = %d", travelNum);
 			System.out.println(sql);
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(0,travelNum);
 			rs = psmt.executeQuery();
 			rs.next();
 			travel.setTravelNum(rs.getInt("travelNum"));
@@ -154,12 +156,13 @@ public class TravelDao {
 			travel.setRegion(rs.getString("region"));		
 			travel.setTravelDate(format.format(rs.getDate("travelDate")));		
 			travel.setTitle(rs.getString("title"));
-			travel.setContent(rs.getString("content"));
-							
+			travel.setContent(rs.getString("content"));	
+			travel.setMax_Count(rs.getInt("maxCount"));
+			travel.setCurrent_Count(rs.getInt("currentCount"));
 		}
 		catch(Exception e)
 		{
-			System.out.println("exception 惯积 : " + e);
+			System.out.println("TravelDao : getTravel -> exception 惯积 : " + e);
 		}
 		finally
 		{
@@ -188,7 +191,7 @@ public class TravelDao {
 		}
 		catch(Exception e)
 		{
-			
+			System.out.println("TravelDao : insertTravel -> exception 惯积 : " + e);
 		}
 		finally
 		{
