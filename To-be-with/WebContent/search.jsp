@@ -170,13 +170,13 @@
 					<div class="home_search_container">
 						<div class="home_search_title">Search for your trip</div>
 						<div class="home_search_content">
-							<form action= "#" class="home_search_form" id="home_search_form">
+							<form action = "travelSearch.do"class="home_search_form" id="home_search_form" method = "post">
 								<div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-									<input type="text" class="search_input search_input_1" placeholder="Country" id = "country">
-									<input type="text" class="search_input search_input_2" placeholder="Region" id = "region" >
-									<input type="text" class="search_input search_input_3" placeholder="TravelDate" id = "travelDate" >
+									<input type="text" class="search_input search_input_1" placeholder="Country" name = "country">
+									<input type="text" class="search_input search_input_2" placeholder="Region" name = "region" >
+									<input type="text" class="search_input search_input_3" placeholder="TravelDate" name = "travelDate" >
 									<!-- <input type="text" class="search_input search_input_4" placeholder="Budget" required="required"> -->
-									<button class="home_search_button" onclick = "travelSearch();">search</button>
+									<button class="home_search_button" type = "submit">search</button>
 								</div>
 							</form>
 						</div>
@@ -391,31 +391,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </div>
 	</footer>
 </div>
-
-<!-- modal -->
-<div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="js/travelSearch.js"></script>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="styles/bootstrap4/popper.js"></script>
 <script src="styles/bootstrap4/bootstrap.min.js"></script>

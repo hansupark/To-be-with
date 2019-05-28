@@ -38,7 +38,9 @@ function travelSearch()
 	);
 }
 
-function loadModal(array)
+function loadModal(title,content)
 {
-	$("#basicExampleModal").modal();
+	$("#myModalLabel").text(title);
+	$("#modal-body").text(content);
+	$("#fullHeightModalRight").modal();
 }

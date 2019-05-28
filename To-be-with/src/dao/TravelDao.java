@@ -114,7 +114,9 @@ public class TravelDao {
 				travel.setTravelNum(rs.getInt("travelNum"));
 				travel.setCountry(rs.getString("country"));
 				travel.setRegion(rs.getString("region"));		
-				travel.setTravelDate(format.format(rs.getDate("travelDate")));				
+				travel.setTravelDate(format.format(rs.getDate("travelDate")));		
+				travel.setTitle(rs.getString("title"));
+				travel.setContent(rs.getString("content"));
 				list.add(travel);
 			}				
 		}
@@ -127,6 +129,43 @@ public class TravelDao {
 			close(conn, psmt);			
 		}						
 		return list;
+	}
+	
+	public TravelVo getTravel(TravelVo vo)
+	{
+		TravelVo travel = null;
+		Connection conn = null;
+		PreparedStatement psmt = null;
+		ResultSet rs = null;
+		String sql = null;		
+		try
+		{
+			int travelNum = vo.getTravelNum();			
+			conn = connect();
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+			sql = "select * from travel where travelNum = ?";
+			System.out.println(sql);
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(0,travelNum);
+			rs = psmt.executeQuery();
+			rs.next();
+			travel.setTravelNum(rs.getInt("travelNum"));
+			travel.setCountry(rs.getString("country"));
+			travel.setRegion(rs.getString("region"));		
+			travel.setTravelDate(format.format(rs.getDate("travelDate")));		
+			travel.setTitle(rs.getString("title"));
+			travel.setContent(rs.getString("content"));
+							
+		}
+		catch(Exception e)
+		{
+			System.out.println("exception ¹ß»ý : " + e);
+		}
+		finally
+		{
+			close(conn, psmt);			
+		}						
+		return travel;
 	}
 	
 	public int insertTravel(TravelVo vo)

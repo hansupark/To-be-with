@@ -18,6 +18,11 @@ public class TravelService {
 		return service;
 	}
 	
+	public TravelVo getTravel(TravelVo travel)
+	{
+		return dao.getTravel(travel);
+	}
+	
 	public ArrayList<TravelVo> getTravelLists(TravelVo travel)
 	{
 		return dao.getTravelList(travel);

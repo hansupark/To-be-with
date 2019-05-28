@@ -13,6 +13,9 @@ public class TravelVo {
 	private int current_Count;
 	private int max_Count;
 	
+	private String title;
+	private String content;
+	
 	public TravelVo()
 	{
 		country = null;
@@ -61,6 +64,22 @@ public class TravelVo {
 	}
 	public void setCurrent_Count(int current_Count) {
 		this.current_Count = current_Count;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
 	}
 	
 }
