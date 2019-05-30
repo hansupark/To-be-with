@@ -15,6 +15,8 @@ public class ReportInsertController implements Controller{
 		// TODO Auto-generated method stub
 		String title = req.getParameter("title");
 		String content = req.getParameter("content");
+		int reportNum = Integer.parseInt(req.getParameter("reportNum"));
+		int reporterNum = Integer.parseInt(req.getParameter("reporterNum"));
 		
 	}
 

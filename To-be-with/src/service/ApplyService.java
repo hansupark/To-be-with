@@ -48,7 +48,8 @@ public class ApplyService {
 		if(vo == null)
 		{
 			return 0;
-		}		
+		}
+		
 		TravelVo travel = new TravelVo();
 		travel.setTravelNum(vo.getTravelNum());
 		travel = service_travel.getTravel(travel);
@@ -56,6 +57,7 @@ public class ApplyService {
 		{
 			return 0;
 		}
+		
 		return dao_apply.insertApply(vo);
 	}
 	
