@@ -23,4 +23,10 @@ function applyInsert(_travelNum,_userNum)
 		}
 	}
 	);
+	location.reload();
+}
+
+function showMyApplys()
+{
+	
 }

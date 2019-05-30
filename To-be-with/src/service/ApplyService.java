@@ -1,5 +1,7 @@
 package service;
 
+import java.util.ArrayList;
+
 import dao.ApplyDao;
 import dao.TravelDao;
 import vo.ApplyVo;
@@ -20,6 +22,27 @@ public class ApplyService {
 		return service;
 	}
 	
+	public ArrayList<ApplyVo> getApplyList_ByUserNum(ApplyVo vo)
+	{
+		ArrayList<ApplyVo> list = dao_apply.getApplyList_ByUserNum(vo);
+		return list;
+	}
+	
+	public int applyUpdate_Approved(ApplyVo vo) //승인했을때 메소드
+	{
+		int result = 0;
+		vo.setIsApproved(true); 
+		result = dao_apply.updateApply(vo);
+		return result;
+	}
+	
+	public int applyDelete(ApplyVo vo)
+	{
+		int result = 0;
+		result = dao_apply.deleteApply(vo);
+		return result;
+	}
+	
 	public int applyInsert(ApplyVo vo)
 	{
 		if(vo == null)
@@ -35,4 +58,5 @@ public class ApplyService {
 		}
 		return dao_apply.insertApply(vo);
 	}
+	
 }
