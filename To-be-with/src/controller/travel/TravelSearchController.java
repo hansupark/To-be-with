@@ -52,7 +52,7 @@ public class TravelSearchController implements Controller{
 		 * System.out.println(result.toString());
 		 * res.getWriter().write(result.toString());
 		 */
-		HttpUtil.forward(req, res, "test.jsp");
+		HttpUtil.forward(req, res, "resultList.jsp");
 		return;
 	}
 

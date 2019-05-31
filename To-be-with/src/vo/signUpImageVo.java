@@ -4,8 +4,7 @@ public class signUpImageVo {
 
 	private int imageNum;
 	private int userNum;
-	private String passport_Image;
-	private String identifacation_Image;
+	private String Image;
 	
 	public int getImageNum() {
 		return imageNum;
@@ -19,16 +18,11 @@ public class signUpImageVo {
 	public void setUserNum(int userNum) {
 		this.userNum = userNum;
 	}
-	public String getPassport_Image() {
-		return passport_Image;
+	public String getImage() {
+		return Image;
 	}
-	public void setPassport_Image(String passport_Image) {
-		this.passport_Image = passport_Image;
+	public void setImage(String image) {
+		Image = image;
 	}
-	public String getIdentifacation_Image() {
-		return identifacation_Image;
-	}
-	public void setIdentifacation_Image(String identifacation_Image) {
-		this.identifacation_Image = identifacation_Image;
-	}
+
 }

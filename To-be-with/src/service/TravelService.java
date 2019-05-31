@@ -27,4 +27,19 @@ public class TravelService {
 	{
 		return dao.getTravelList(travel);
 	}
+	
+	public int insertTravel(TravelVo travel)
+	{
+		return dao.insertTravel(travel);
+	}
+	
+	public int upadteTravel(TravelVo travel)
+	{
+		return dao.updateTravel(travel);
+	}
+	
+	public int deleteTravel(TravelVo travel)
+	{
+		return dao.deleteTravel(travel);
+	}
 }
