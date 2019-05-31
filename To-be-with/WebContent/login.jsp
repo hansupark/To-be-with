@@ -1,9 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title>To be with login</title>
 <link type="text/css" rel="stylesheet" href="css/login.css">
 <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
@@ -19,14 +18,14 @@
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto">
               <h3 class="login-heading mb-4">Welcome back!</h3>
-              <form action = "userLogin.do" method = "POST">
+              <form method="post" action="UserLoginController.do">
                 <div class="form-label-group">
-                  <input type="email" name = "email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                  <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
                   <label for="inputEmail">Email address</label>
                 </div>
 
                 <div class="form-label-group">
-                  <input type="password" name = "pw"  id="inputPassword" class="form-control" placeholder="Password" required>
+                  <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
                   <label for="inputPassword">Password</label>
                 </div>
 
@@ -39,6 +38,9 @@
                   <a class="small" href="findpwd.jsp">Forgot password?</a>
                   <br>
                   <a class="samll" href="register.jsp">Register</a>
+                  <br>
+                  <a class="samll" href="loginadmin.jsp">Login for Admin</a>
+                  
                   </div>
                	  
               </form>
@@ -49,7 +51,5 @@
     </div>
   </div>
 </div>
-</body>
-</html>
 </body>
 </html>
