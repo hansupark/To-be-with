@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,8 +6,8 @@
 <title>To be with login</title>
 <link type="text/css" rel="stylesheet" href="css/login.css">
 <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
-</head>
 
+</head>
 <body>
 <div class="container-fluid">
   <div class="row no-gutter">
@@ -19,14 +18,14 @@
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto">
               <h3 class="login-heading mb-4">Welcome back!</h3>
-              <form name="login" method="post" action="UserloginService.do" >
+              <form method="post" action="UserLoginController.do">
                 <div class="form-label-group">
-                  <input type="email" name="email"id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                  <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
                   <label for="inputEmail">Email address</label>
                 </div>
 
                 <div class="form-label-group">
-                  <input type="password" name="password"id="inputPassword" class="form-control" placeholder="Password" required>
+                  <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
                   <label for="inputPassword">Password</label>
                 </div>
 
@@ -36,7 +35,7 @@
                 </div>
                 <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign in</button>
                 <div class="text-center">
-                  <a class="small" href="#">Forgot password?</a>
+                  <a class="small" href="findpwd.jsp">Forgot password?</a>
                   <br>
                   <a class="samll" href="register.jsp">Register</a>
                   </div>
