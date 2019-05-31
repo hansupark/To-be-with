@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
     isELIgnored="false" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="contextPath"  value="${pageContext.request.contextPath}"  />
 <%@page import="dao.UserDao"%> 
 <%@page import="vo.*" %>
 <%@page import="java.util.ArrayList"%>
@@ -44,6 +41,7 @@
                                 <th>생일</th>
                                 <th>전화번호</th>
                                 <th>카카오톡 ID</th>
+                                <th>삭제</th>
                             </tr>
                             <%
   					UserVo vo=new UserVo();
@@ -55,10 +53,11 @@
                 			<td><%=dto.getName() %></td>
                 			<td><%=dto.getEmail() %></td>
                 			<td><%=dto.getPassword() %></td>
-              			        <td><%=dto.getGender() %></td>
-            			        <td><%=dto.getDate_Of_Birth() %></td>
+           			        <td><%=dto.getGender() %></td>
+           			        <td><%=dto.getDate_Of_Birth() %></td>
 			                <td><%=dto.getPhone_Number() %></td>
         					<td><%=dto.getKakao_ID() %></td>
+        					<td><button onclick = "userDelete(<%=dto.getUserNum()%>)">삭제</button></td>
 				</tr>
 				<%
  
@@ -75,4 +74,5 @@
     </div>
 </div>
 </body>
+<script src = "js/user.js"></script>
 </html>
