@@ -13,7 +13,7 @@
 	test_2.setReporterNum(LoginUserNum); /* 로그인 구현 완료시 다시 수정하기 */
 	ArrayList<TravelVo> list = (ArrayList<TravelVo>) request.getAttribute("resultList");
 	ArrayList<ApplyVo> list_Apply_user = (ArrayList<ApplyVo>) ApplyService.getService().getApplyList_ByUserNum(test);
-	ArrayList<ReportVo> list_Report_user = (ArrayList<ReportVo>) ReportService.getService().selectReports(test_2);
+	ArrayList<ReportVo> list_Report_user = (ArrayList<ReportVo>) ReportService.getService().selectReports_ByReporterNum(test_2);
 %>
 
 <!DOCTYPE html>

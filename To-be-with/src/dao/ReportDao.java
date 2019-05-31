@@ -156,6 +156,46 @@ public class ReportDao {
 		}
 		catch(Exception e)
 		{
+			System.out.println("reportDao : selectReports_ByReporterNum error : " + e);
+		}
+		finally
+		{
+			close(conn, psmt);
+		}
+		return list;
+	}
+	
+	public ArrayList<ReportVo> selectReports(ReportVo vo)
+	{
+		ArrayList<ReportVo> list = null;
+		ReportVo report = null;
+		Connection conn = null;
+		PreparedStatement psmt = null;
+		String sql = null;
+		ResultSet rs = null;
+		try
+		{
+			list = new ArrayList<ReportVo>();
+			sql = String.format("select * from report");
+			conn = connect();
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			while(rs.next())
+			{
+				report = new ReportVo();
+				report.setReportNum(rs.getInt("reportNum"));
+				report.setReporterNum(rs.getInt("reporterNum"));
+				report.setReportedUserNum(rs.getInt("reportedUserNum"));
+				report.setTitle(rs.getString("title"));
+				report.setContent(rs.getString("content"));
+				report.setType(rs.getShort("type"));
+				report.setObjectNum(rs.getInt("objectNum"));
+				list.add(report);
+			}
+		
+		}
+		catch(Exception e)
+		{
 			System.out.println("reportDao : selectReports error : " + e);
 		}
 		finally

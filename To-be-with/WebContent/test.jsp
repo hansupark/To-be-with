@@ -1,38 +1,32 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title>To be with login</title>
 <link type="text/css" rel="stylesheet" href="login.css">
 <link type="text/css" rel="stylesheet" href="bootstrap.min.css">
+<style>
 
+
+
+</style>
 </head>
 <body>
 <br>
-<div class="col-md-12">  
-    <div class="col-md-4">      
-        <div class="portlet light profile-sidebar-portlet bordered">
-            <div class="profile-userpic">
-                <img src="https://bootdey.com/img/Content/avatar/avatar6.png" class="img-responsive" alt=""> </div>
-            <div class="profile-usertitle">
-                <div class="profile-usertitle-name"> Ïù¥Î¶ÑÎ∞õÏïÑÏò§Í∏∞ </div>
-              
-            </div>
-          
-           
-         
-             
-        </div>
-    </div>
-    <div class="col-md-8"> 
+<div class="form-group">
+
+
+   <div class="container" >
+    <div class="col-me-12"> 
+   
         <div class="portlet light bordered">
             <div class="portlet-title tabbable-line">
                 <div class="caption caption-md">
                     <i class="icon-globe theme-font hide"></i>
-                    <span class="caption-subject font-blue-madison bold uppercase">ÏûëÏÑ±Ïûê Ï†ïÎ≥¥</span>
+                    <span class="caption-subject font-blue-madison bold uppercase">¿€º∫¿⁄ ¡§∫∏</span>
                 </div>
             </div>
             <div class="portlet-body">
@@ -40,10 +34,10 @@
                 
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">ÏóÖÎç∞Ïù¥Ìä∏</a></li>
-                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">ÌîÑÎ°úÌïÑ</a></li>
-                        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">ÏûëÏÑ±ÌïúÍ∏Ä</a></li>
-                        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">ÎèôÌñâ Ïã†Ï≤≠ ÌòÑÌô©</a></li>
+                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">æ˜µ•¿Ã∆Æ</a></li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">«¡∑Œ« </a></li>
+                        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">¿€º∫«—±€</a></li>
+                        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">µø«‡ Ω≈√ª «ˆ»≤</a></li>
                     </ul>
                 
                     <!-- Tab panes -->
@@ -52,11 +46,11 @@
                             <form>
                               <div class="form-group">
                                 <label for="inputName">Name</label>
-                                <input type="text" class="form-control" id="inputName" placeholder="Name">
+                                <input type="text" class="form-control" id="inputName" placeholder="Name" >
                               </div>
                                 <div class="form-group">
                                 <label for="inputLastName">Last Name</label>
-                                <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+                                <input type="text" class="form-control" rows="5" id="inputLastName" placeholder="Last Name">
                               </div>
                               <div class="form-group">
                                 <label for="exampleInputEmail1">Email address</label>
@@ -83,11 +77,12 @@
                         <div role="tabpanel" class="tab-pane" id="messages">Messages</div>
                         <div role="tabpanel" class="tab-pane" id="settings">Settings</div>
                     </div>
-                
                 </div>
             </div>
+            </div></div></div>
+            </div>
         </div>
-    </div>
-</div>
+
+
 </body>
 </html>

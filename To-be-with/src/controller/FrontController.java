@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import controller.apply.ApplyAcceptController;
 import controller.apply.ApplyInsertController;
+import controller.report.ReportAcceptController;
 import controller.report.ReportInsertController;
 import controller.travel.TravelIncreaseCountController;
 import controller.travel.TravelSearchController;
@@ -28,6 +29,7 @@ public class FrontController extends HttpServlet{
 		list.put("/travelIncreaseCount.do",new TravelIncreaseCountController());
 		
 		list.put("/reportInsert.do",new ReportInsertController());
+		list.put("/reportApprove.do",new ReportAcceptController());
 		
 		list.put("/userLogin.do",new UserLoginController());
 		list.put("/userDelete.do",new UserDeleteController());

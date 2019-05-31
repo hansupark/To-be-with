@@ -36,3 +36,36 @@ function reportInsert_travel(_reporterNum)
 	);
 	location.reload();
 }
+
+
+
+
+function reportApproved(_type,_objectNum)
+{
+	if(_type == 0)
+	{
+		$.ajax
+		(
+		{
+			type : "POST",
+			url : "reportApprove.do",
+			data : 
+				{
+				objectNum : _objectNum,
+				type : _type
+				},
+			success : function(result)
+			{
+				if(result == 0)
+				{
+					alert("승인실패");
+				}
+				else if(result == 1)
+				{
+					alert("승인성공");
+				}
+			}
+		}
+		);
+	}
+}

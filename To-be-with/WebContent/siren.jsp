@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
     isELIgnored="false" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="contextPath"  value="${pageContext.request.contextPath}"  />
 <%@page import="dao.ReportDao"%> 
 <%@page import="vo.ReportVo" %>
 <%@page import="java.util.ArrayList"%>
@@ -38,28 +35,30 @@
                         <thead>
                             <tr>
                                 <th>고유번호</th>
-                                <th>신고자회원번호</th> 
-                                <th>신고대상유전</th>
+                                <th>신고자 회원번호</th> 
+                                <th>신고대상 회원번호</th>
                                 <th>제목</th>
                                 <th>내용</th>
                                 <th>신고 Type</th>
                                 <th>게시물번호</th>
+                                <th>신고 승인</th>
                             </tr>
                             <%
   						//신고자 List 배열 가져온 후에 vo 및 Dao에 맞는 배열 쓰기
-                        ReportVo vo=new ReportVo();
-						            ReportService service = ReportService.getService();
-         				        ArrayList<ReportVo> list = service.selectReports(vo);
-         				        for(ReportVo dto:list){        
+                            ReportVo vo=new ReportVo();
+					        ReportService service = ReportService.getService();
+      				        ArrayList<ReportVo> list = service.selectReports(vo);
+       				        for(ReportVo dto:list){        
 							              %>       
 							<tr>
                 			<td><%=dto.getReportNum() %></td>
                 			<td><%=dto.getReporterNum() %></td>
                 			<td><%=dto.getReportedUserNum() %></td>
-              			  <td><%=dto.getTitle() %></td>
+              			    <td><%=dto.getTitle() %></td>
             			    <td><%=dto.getContent() %></td>
 			                <td><%=dto.getType() %></td>
-        					    <td><%=dto.getObjectNum() %></td>
+        					<td><%=dto.getObjectNum()%></td>
+        					<td><button onclick = "reportApproved(<%=dto.getType()%>,<%=dto.getObjectNum()%>)">승인</button></td>
 				        </tr>
 				        
 				        <%
@@ -77,4 +76,5 @@
     </div>
 </div>
 </body>
+<script src = "js/report.js"></script>
 </html>

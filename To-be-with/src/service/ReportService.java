@@ -49,9 +49,14 @@ public class ReportService {
 		return dao.selectReport(vo);
 	}
 	
-	public ArrayList<ReportVo> selectReports(ReportVo vo)
+	public ArrayList<ReportVo> selectReports_ByReporterNum(ReportVo vo)
 	{
 		return dao.selectReports_ByReporterNum(vo);
+	}
+	
+	public ArrayList<ReportVo> selectReports(ReportVo vo)
+	{
+		return dao.selectReports(vo);
 	}
 	
 }
