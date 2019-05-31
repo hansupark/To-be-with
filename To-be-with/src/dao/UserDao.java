@@ -206,6 +206,7 @@ public class UserDao {
 				result.setDate_Of_Birth(rs.getDate("date_Of_Birth"));
 				result.setKakao_ID(rs.getString("kakao_Id"));
 				result.setIsApproved(rs.getBoolean("isApproved"));
+				result.setPhone_Number(rs.getString("phone_Number"));
 				list.add(result);
 			}
 		}
