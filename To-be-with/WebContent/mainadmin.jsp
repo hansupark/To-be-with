@@ -30,7 +30,7 @@
         <div class="col-md-5">
           <h3>User List</h3>
           <p>You can watch User List</p>
-          <a class="btn btn-primary" href="userlist.jsp">Go</a>
+          <a class="btn btn-primary" href="Userlist.jsp">Go</a>
         </div>
       </div>
       <!-- /.row -->

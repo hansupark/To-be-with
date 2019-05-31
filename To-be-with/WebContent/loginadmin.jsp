@@ -19,14 +19,14 @@
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto">
               <h3 class="login-heading mb-4">Welcome Admin User!</h3>
-              <form method="post" action="AdminLoginController.do">
+              <form method="post" action="adminLogin.do">
                 <div class="form-label-group">
-                  <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus>
-                  <label for="inputEmail">Email address</label>
+                  <input type="text" id="inputEmail" name="adminId" class="form-control" placeholder="Admin ID" required autofocus>
+                  <label for="Admin ID">Email address</label>
                 </div>
 
                 <div class="form-label-group">
-                  <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                  <input type="password" name="adminPw" id="inputPassword" class="form-control" placeholder="Password" required>
                   <label for="inputPassword">Password</label>
                 </div>
 

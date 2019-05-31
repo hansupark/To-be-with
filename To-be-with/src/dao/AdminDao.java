@@ -3,6 +3,10 @@ package dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import vo.AdminVo;
+import vo.ReportVo;
 
 public class AdminDao {
 
@@ -56,5 +60,40 @@ public class AdminDao {
 				System.out.println("close : conn error : " + e);
 			}
 		}
+	}
+
+	public AdminVo selectAdmin(AdminVo vo) {
+		
+		Connection conn = null;
+		PreparedStatement psmt = null;
+		String sql = null;
+		ResultSet rs = null;
+		AdminVo admin = null;
+		try
+		{
+			admin = new AdminVo();
+			sql = String.format("select * from admin where id = %s","\"" +vo.getId() + "\"");
+			System.out.println(sql);
+			conn = connect();	
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			rs.next();
+			admin.setAdminNum(rs.getInt("adminNum"));
+			admin.setId(rs.getString("id"));
+			admin.setPw(rs.getString("password"));
+			admin.setName(rs.getString("name"));			
+		}
+		
+		catch(Exception e)
+		{
+			System.out.println("AdminDao : selectAdmin error : " + e);
+		}
+		
+		finally
+		{
+			close(conn, psmt);
+		}
+		
+		return admin;
 	}
 }

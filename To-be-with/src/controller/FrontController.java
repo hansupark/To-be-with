@@ -9,10 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import controller.admin.AdminLoginController;
 import controller.apply.ApplyAcceptController;
 import controller.apply.ApplyInsertController;
 import controller.report.ReportAcceptController;
 import controller.report.ReportInsertController;
+import controller.signUpImage.SignUpImageInsertController;
 import controller.travel.TravelIncreaseCountController;
 import controller.travel.TravelSearchController;
 import controller.user.UserDeleteController;
@@ -36,6 +38,10 @@ public class FrontController extends HttpServlet{
 		
 		list.put("/applyAccept.do",new ApplyAcceptController());
 		list.put("/applyInsert.do",new ApplyInsertController());
+		
+		list.put("/adminLogin.do",new AdminLoginController());
+		
+		list.put("/uploadimage.do", new SignUpImageInsertController());
 	}
 	
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException

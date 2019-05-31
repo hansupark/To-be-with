@@ -18,11 +18,11 @@
         <div class="container">
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto">
-              <h3 class="login-heading mb-4">Upload your image for Approve</h3>
-              <form method="post" action="UserLoginController.do">
-                <div class="form-label-group">
-                  <input type="file" name="passport" id="passport" class="form-control" placeholder="passport" required autofocus>
-                  
+              <h3 class="login-heading mb-4">Upload your image for Approve</h3>              
+                <div class="form-label-group">               
+                  <form method="post" enctype="multipart/form-data" action="uploadimage.do"> <!-- miltipart/form-data servlet에 피일을 준다는 신호줌 -->
+					<input type="file" name="file" id="passport" class="form-control" placeholder="image" required autofocus>				
+				  </form>
                 </div>
 
        
