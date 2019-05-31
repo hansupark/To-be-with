@@ -15,6 +15,7 @@ import controller.report.ReportInsertController;
 import controller.travel.TravelIncreaseCountController;
 import controller.travel.TravelSearchController;
 import controller.user.UserLoginController;
+import controller.user.UserRegisterController;
 
 
 public class FrontController extends HttpServlet{
@@ -29,6 +30,7 @@ public class FrontController extends HttpServlet{
 		list.put("/reportInsert.do",new ReportInsertController());
 		
 		list.put("/userLogin.do",new UserLoginController());
+		list.put("/UserRegisterController.do",new UserRegisterController());
 		
 		list.put("/applyAccept.do",new ApplyAcceptController());
 		list.put("/applyInsert.do",new ApplyInsertController());

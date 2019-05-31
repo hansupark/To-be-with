@@ -9,7 +9,7 @@ public class UserVo {
 	private String password;
 	private String name;
 	private int gender;
-	private Date date_Of_Birth;
+	private String date_Of_Birth;
 	private String phone_Number;
 	private String kakao_ID;
 	private boolean isApproved;
@@ -45,10 +45,10 @@ public class UserVo {
 	public void setGender(int gender) {
 		this.gender = gender;
 	}
-	public Date getDate_Of_Birth() {
+	public String getDate_Of_Birth() {
 		return date_Of_Birth;
 	}
-	public void setDate_Of_Birth(Date date_Of_Birth) {
+	public void setDate_Of_Birth(String date_Of_Birth) {
 		this.date_Of_Birth = date_Of_Birth;
 	}
 	public String getPhone_Number() {

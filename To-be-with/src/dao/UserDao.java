@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import vo.UserVo;
@@ -70,12 +71,21 @@ public class UserDao {
 		Connection conn = null;
 		PreparedStatement psmt = null;
 		String sql = null;
+		SimpleDateFormat transFormat = new SimpleDateFormat("yyyy-MM-dd");
 		
 		try
 		{
 			conn = connect();
-			sql = "insert into user(email,password,name,gender,date_Of_Birth,kakao_Id) values(?,?,?,?,?,?)";
+			sql = "insert into user(email,password,name,gender,date_Of_Birth,kakao_Id,phone_Number) values(?,?,?,?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
+			psmt.setString(1,user.getEmail());
+			psmt.setString(2,user.getPassword());
+			psmt.setString(3,user.getName());
+			psmt.setInt(4,user.getGender());
+			java.sql.Date date = java.sql.Date.valueOf(user.getDate_Of_Birth());
+			psmt.setDate(5, date);
+			psmt.setString(6,user.getKakao_ID());
+			psmt.setString(7, user.getPhone_Number());
 		    result = psmt.executeUpdate();		    
 		}
 		catch(Exception e)
@@ -90,16 +100,39 @@ public class UserDao {
 		return result;
 	}
 	
-	public boolean UpdateUser(UserVo user)
+	public int UpdateUser(UserVo user)
 	{
-		boolean result = false;
+		int result = 0;
+		Connection conn = null;
+		PreparedStatement psmt = null;
+		String sql = null;
+		SimpleDateFormat transFormat = new SimpleDateFormat("yyyy-MM-dd");
 		
-		return result;
-	}
-	
-	public boolean DeleteUser(UserVo user)
-	{
-		boolean result = false;
+		try
+		{
+			conn = connect();
+			sql = "update user set email = ?,password = ?,name = ?,gender = ?,date_Of_Birth = ?,kakao_Id"
+					+ " = ?  phone_Number = ? where userNum = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1,user.getUserNum());
+			psmt.setString(2,user.getPassword());
+			psmt.setString(3,user.getName());
+			psmt.setInt(4,user.getGender());
+			java.sql.Date date = java.sql.Date.valueOf(user.getDate_Of_Birth());
+			psmt.setDate(5,date);
+			psmt.setString(6,user.getKakao_ID());
+			psmt.setInt(7,user.getUserNum());
+			psmt.setString(8, user.getPhone_Number());
+		    result = psmt.executeUpdate();		    
+		}
+		catch(Exception e)
+		{
+			System.out.println("UserDao : updateUser error : " + e);
+		}
+		finally 
+		{
+			close(conn, psmt);
+		}
 		
 		return result;
 	}
@@ -113,6 +146,7 @@ public class UserDao {
 		UserVo result = null;		
 		try
 		{
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 			conn = connect();
 			sql = String.format("select * from user where email = %s", "\"" +user.getEmail() + "\"");
 			System.out.println(sql);
@@ -126,14 +160,47 @@ public class UserDao {
 				result.setPassword(rs.getString("password"));
 				result.setName(rs.getString("name"));
 				result.setGender(rs.getShort("gender"));
-				result.setDate_Of_Birth(rs.getDate("date_Of_Birth"));
+				result.setDate_Of_Birth(format.format(rs.getDate("date_Of_Birth")));
 				result.setKakao_ID(rs.getString("kakao_Id"));
 				result.setIsApproved(rs.getBoolean("isApproved"));
+				result.setPhone_Number(rs.getString("phone_Number"));
 			}
 		}
 		catch(Exception e)
 		{
 			System.out.println("UserDao : selectUser error : " + e);
+		}
+		finally
+		{
+			close(conn, psmt);
+		}
+		return result;
+	}
+	
+	public UserVo SelectUser_byPhoneNumber(UserVo user)
+	{		
+		Connection conn = null;
+		PreparedStatement psmt = null;
+		String sql = null;
+		ResultSet rs = null;
+		UserVo result = null;		
+		try
+		{
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+			conn = connect();
+			sql = String.format("select * from user where phone_Number = %s", "\"" +user.getPhone_Number() + "\"");
+			System.out.println(sql);
+			psmt = conn.prepareStatement(sql);		
+			rs = psmt.executeQuery();			
+			while(rs.next())
+			{
+				result = new UserVo();
+				result.setUserNum(rs.getInt("userNum"));			
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println("UserDao : selectUser_byphone_Number error : " + e);
 		}
 		finally
 		{
@@ -149,6 +216,7 @@ public class UserDao {
 		String sql = null;
 		ResultSet rs = null;
 		UserVo result = null;		
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		try
 		{
 			conn = connect();
@@ -164,9 +232,10 @@ public class UserDao {
 				result.setPassword(rs.getString("password"));
 				result.setName(rs.getString("name"));
 				result.setGender(rs.getShort("gender"));
-				result.setDate_Of_Birth(rs.getDate("date_Of_Birth"));
+				result.setDate_Of_Birth(format.format(rs.getDate("date_Of_Birth")));
 				result.setKakao_ID(rs.getString("kakao_Id"));
-				result.setIsApproved(rs.getBoolean("isApproved"));	
+				result.setIsApproved(rs.getBoolean("isApproved"));
+				result.setPhone_Number(rs.getString("phone_Number"));
 			}
 		}
 		catch(Exception e)
@@ -189,6 +258,7 @@ public class UserDao {
 		ArrayList<UserVo> list = null;
 		try
 		{
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 			conn = connect();
 			sql = String.format("select * from user");
 			psmt = conn.prepareStatement(sql);			
@@ -203,9 +273,10 @@ public class UserDao {
 				result.setPassword(rs.getString("password"));
 				result.setName(rs.getString("name"));
 				result.setGender(rs.getShort("gender"));
-				result.setDate_Of_Birth(rs.getDate("date_Of_Birth"));
+				result.setDate_Of_Birth(format.format(rs.getDate("date_Of_Birth")));
 				result.setKakao_ID(rs.getString("kakao_Id"));
 				result.setIsApproved(rs.getBoolean("isApproved"));
+				result.setPhone_Number(rs.getString("phone_Number"));
 				list.add(result);
 			}
 		}
@@ -219,6 +290,33 @@ public class UserDao {
 		}
 		
 		return list;
+	}
+
+	public int deleteUser(UserVo user) {
+
+		int result = 0;
+		Connection conn = null;
+		PreparedStatement psmt = null;
+		String sql = null;
+		
+		try
+		{
+			conn = connect();
+			sql = "delete from user where userNum = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1,user.getUserNum());
+		    result = psmt.executeUpdate();		    
+		}
+		catch(Exception e)
+		{
+			System.out.println("UserDao : deleteUser error : " + e);
+		}
+		finally 
+		{
+			close(conn, psmt);
+		}
+		
+		return result;
 	}
 	
 	

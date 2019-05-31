@@ -39,15 +39,17 @@ public class UserService {
 	
 	public int userCreate(UserVo vo)
 	{
-		int result = 0;
-		ArrayList<UserVo> list = null;
-		list = dao.selectUsers(vo);
-		return result;
+		return dao.InsertUser(vo);
 	}
 	
 	public UserVo selectUser(UserVo vo)
 	{
 		return dao.SelectUser(vo);
+	}
+	
+	public UserVo selectUser_byPhone_Number(UserVo vo)
+	{
+		return dao.SelectUser_byPhoneNumber(vo);
 	}
 	
 	public ArrayList<UserVo> selectUsers(UserVo vo)
@@ -58,5 +60,9 @@ public class UserService {
 	public UserVo selectUser_byUserNum(UserVo vo)
 	{
 		return dao.SelectUser_byUserNum(vo);
+	}
+
+	public int userDelete(UserVo user) {
+		return dao.deleteUser(user);
 	}
 }

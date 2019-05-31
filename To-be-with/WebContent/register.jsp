@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>To be with Register</title>
 
 <link type="text/css" rel="stylesheet" href="css/register.css"/>
@@ -22,21 +22,21 @@
           </div>
           <div class="card-body">
             <h5 class="card-title text-center">Register</h5>
-            <form class="form-signin">
+            <form class="form-signin" method="post" action="UserRegisterController.do">
               <div class="form-label-group">
-                <input type="text" id="inputUserame" class="form-control" placeholder="Username" required autofocus>
+                <input type="text" name="name"id="inputUserame" class="form-control" placeholder="Username" required autofocus>
                 <label for="inputUserame">Username</label>
               </div>
 
               <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required>
+                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required>
                 <label for="inputEmail">Email address</label>
               </div>
               
               <hr>
 
               <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
                 <label for="inputPassword">Password</label>
               </div>
               
@@ -45,30 +45,32 @@
                 <label for="inputConfirmPassword">Confirm password</label>
               </div>
 
-			  <hr>
-			  
-			  <div class="form-label-group">
-                <input type="text" id="phonenumber" class="form-control" placeholder="Phonenumber" required>
+           <hr>
+           
+           <div class="form-label-group">
+                <input type="text" name="kakao" id="kakao" class="form-control" placeholder="kakaoid" required>
+                <label for="kakao">KaKao ID</label>
+              </div>
+           
+           
+           <div class="form-label-group">
+                <input type="text" name="phone_Number" id="phonenumber" class="form-control" placeholder="Phonenumber" required>
                 <label for="phonenumber">Phonenumber</label>
               </div>
-			  
-			  <div class="form-label-group">
-                <input type="radio" name="gender" id="male" class="form-control" placeholder="male" required>
-                <label for="male">Male</label>
+           
+           <div class="form-label-group">
+                  Male<input type="radio" name="gender" value="1"  placeholder="male" required>
+              
+                Female<input type="radio" name="gender" value="0" placeholder="female" required>
               </div>
-			  
-			  <div class="form-label-group">
-                <input type="radio" name="gender" id="female" class="form-control" placeholder="female" required>
-                <label for="female">Female</label>
-              </div>
-			  
-			  <div class="form-label-group">
-                <input type="date" id="birh" class="form-control" placeholder="birth" required>
+           
+           <div class="form-label-group">
+                <input type="date" name="birth" id="birh" class="form-control" placeholder="birth" required>
                 <label for="birth">Birth</label>
               </div>
-			  
+           
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
-              <a class="d-block text-center mt-2 small" href="login.html">Sign In</a>
+              <a class="d-block text-center mt-2 small" href="login.jsp">Sign In</a>
               <hr class="my-4">
             </form>
           </div>
