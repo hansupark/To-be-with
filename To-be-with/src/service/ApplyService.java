@@ -22,11 +22,18 @@ public class ApplyService {
 		return service;
 	}
 	
-	public ArrayList<ApplyVo> getApplyList_ByUserNum(ApplyVo vo)
+	public ArrayList<ApplyVo> getApplyList_ByUserNum(ApplyVo vo) //현재 로그인 되어있는 유저의 신청apply를 return
 	{
 		ArrayList<ApplyVo> list = dao_apply.getApplyList_ByUserNum(vo);
 		return list;
 	}
+	
+	public ArrayList<ApplyVo> getApplyList_ByTravelNum(ApplyVo vo) //현재 로그인 되어있는 유저의 신청apply를 return
+	{
+		ArrayList<ApplyVo> list = dao_apply.getApplyList_ByTravelNum(vo);
+		return list;
+	}
+	
 	
 	public int applyUpdate_Approved(ApplyVo vo) //승인했을때 메소드
 	{

@@ -152,6 +152,7 @@ public class TravelDao {
 			rs = psmt.executeQuery();
 			rs.next();
 			travel.setTravelNum(rs.getInt("travelNum"));
+			travel.setUserNum(rs.getInt("userNum"));
 			travel.setCountry(rs.getString("country"));
 			travel.setRegion(rs.getString("region"));		
 			travel.setTravelDate(format.format(rs.getDate("travelDate")));		
@@ -169,6 +170,50 @@ public class TravelDao {
 			close(conn, psmt);			
 		}						
 		return travel;
+	}
+	
+	public ArrayList<TravelVo> getTravels_ByUserNum(TravelVo vo)
+	{
+		ArrayList<TravelVo> list = null;
+		TravelVo travel = null;
+		Connection conn = null;
+		PreparedStatement psmt = null;
+		ResultSet rs = null;
+		String sql = null;		
+		try
+		{
+			list = new ArrayList<TravelVo>();
+			int userNum = vo.getUserNum();
+			conn = connect();
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+			sql = String.format("select * from travel where userNum = %d", userNum);
+			System.out.println(sql);
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			while(rs.next())
+			{
+				travel = new TravelVo();
+				travel.setTravelNum(rs.getInt("travelNum"));
+				travel.setUserNum(rs.getInt("userNum"));
+				travel.setCountry(rs.getString("country"));
+				travel.setRegion(rs.getString("region"));		
+				travel.setTravelDate(format.format(rs.getDate("travelDate")));		
+				travel.setTitle(rs.getString("title"));
+				travel.setContent(rs.getString("content"));	
+				travel.setMax_Count(rs.getInt("maxCount"));
+				travel.setCurrent_Count(rs.getInt("currentCount"));
+				list.add(travel);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println("TravelDao : getTravels by userNum -> exception 발생 : " + e);
+		}
+		finally
+		{
+			close(conn, psmt);			
+		}						
+		return list;
 	}
 	
 	public int insertTravel(TravelVo vo)
@@ -199,5 +244,63 @@ public class TravelDao {
 		}
 		return result;
 	}
+	
+	public int updateTravel(TravelVo vo)
+	{
+		Connection conn = null;
+		PreparedStatement psmt = null;
+		String sql = null;
+		int result = 0;
+		
+		try
+		{
+			conn = connect();
+			sql = "update set travel userNum = ?,travelDate = ?,country= ?,region= ? where travelNum = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(0,vo.getUserNum());
+			psmt.setString(1,vo.getTravelDate());
+			psmt.setString(2,vo.getCountry());
+			psmt.setString(3,vo.getRegion());
+			psmt.setInt(5,vo.getTravelNum());
+			result = psmt.executeUpdate();
+		}
+		catch(Exception e)
+		{
+			System.out.println("TravelDao : updateTravel -> exception 발생 : " + e);
+		}
+		finally
+		{
+			close(conn, psmt);
+		}
+		return result;
+	}
+	
+	public int deleteTravel(TravelVo vo)
+	{
+		Connection conn = null;
+		PreparedStatement psmt = null;
+		String sql = null;
+		int result = 0;
+		
+		try
+		{
+			conn = connect();
+			sql = "delete from travel where travelNum = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(0,vo.getTravelNum());
+			result = psmt.executeUpdate();
+		}
+		catch(Exception e)
+		{
+			System.out.println("TravelDao : deleteTravel -> exception 발생 : " + e);
+		}
+		finally
+		{
+			close(conn, psmt);
+		}
+		return result;
+	}
+	
+	
 	
 }

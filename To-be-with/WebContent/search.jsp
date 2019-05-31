@@ -174,7 +174,7 @@
 								<div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
 									<input type="text" class="search_input search_input_1" placeholder="Country" name = "country">
 									<input type="text" class="search_input search_input_2" placeholder="Region" name = "region" >
-									<input type="text" class="search_input search_input_3" placeholder="TravelDate" name = "travelDate" >
+									<input type="date" class="search_input search_input_3" placeholder="TravelDate" name = "travelDate" >
 									<!-- <input type="text" class="search_input search_input_4" placeholder="Budget" required="required"> -->
 									<button class="home_search_button" type = "submit">search</button>
 								</div>

@@ -70,9 +70,11 @@ public class ReportDao {
 		String sql = null;
 		try
 		{
+			System.out.println(vo.toString());
 			sql = String.format("insert into report(reporterNum,reportedUserNum,title,content,type,objectNum)"
 					+ " values(%d,%d,%s,%s,%d,%d)",vo.getReporterNum(),vo.getReportedUserNum(),
-					vo.getTitle(),vo.getContent(),vo.getType(),vo.getObjectNum());
+					"\"" +vo.getTitle() + "\"","\"" +vo.getContent() + "\"",vo.getType(),vo.getObjectNum());
+			System.out.println(sql);
 			conn = connect();
 			psmt = conn.prepareStatement(sql);
 			result = psmt.executeUpdate();
@@ -123,7 +125,7 @@ public class ReportDao {
 		return report;
 	}
 	
-	public ArrayList<ReportVo> selectReports(ReportVo vo)
+	public ArrayList<ReportVo> selectReports_ByReporterNum(ReportVo vo)
 	{
 		ArrayList<ReportVo> list = null;
 		ReportVo report = null;
@@ -134,7 +136,7 @@ public class ReportDao {
 		try
 		{
 			list = new ArrayList<ReportVo>();
-			sql = String.format("select * from report where reportNum = %d",vo.getReportNum());
+			sql = String.format("select * from report where reporterNum = %d",vo.getReporterNum());
 			conn = connect();
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
@@ -147,8 +149,7 @@ public class ReportDao {
 				report.setTitle(rs.getString("title"));
 				report.setContent(rs.getString("content"));
 				report.setType(rs.getShort("type"));
-				report.setApproved(rs.getBoolean("isApproved"));
-				report.setObjectNum(rs.getInt("obejctNum"));
+				report.setObjectNum(rs.getInt("objectNum"));
 				list.add(report);
 			}
 		

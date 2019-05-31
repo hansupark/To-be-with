@@ -63,10 +63,10 @@ public class UserVo {
 	public void setKakao_ID(String kakao_ID) {
 		this.kakao_ID = kakao_ID;
 	}
-	public boolean isApproved() {
+	public boolean getIsApproved() {
 		return isApproved;
 	}
-	public void setApproved(boolean isApproved) {
+	public void setIsApproved(boolean isApproved) {
 		this.isApproved = isApproved;
 	}
 }

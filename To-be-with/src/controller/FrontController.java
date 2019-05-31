@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import controller.apply.ApplyInsertController;
+import controller.report.ReportInsertController;
 import controller.travel.TravelSearchController;
+import controller.user.UserLoginController;
 
 
 public class FrontController extends HttpServlet{
@@ -21,6 +23,8 @@ public class FrontController extends HttpServlet{
 		list = new HashMap<String, Controller>();
 		list.put("/travelSearch.do",new TravelSearchController());
 		list.put("/applyInsert.do",new ApplyInsertController());
+		list.put("/reportInsert.do",new ReportInsertController());
+		list.put("/userLogin.do",new UserLoginController());
 	}
 	
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException

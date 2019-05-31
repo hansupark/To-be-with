@@ -114,13 +114,13 @@ public class UserDao {
 		try
 		{
 			conn = connect();
-			sql = "select * from user where email = ?";
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(0,user.getEmail());
-			rs = psmt.executeQuery();
-			result = new UserVo();
+			sql = String.format("select * from user where email = %s", "\"" +user.getEmail() + "\"");
+			System.out.println(sql);
+			psmt = conn.prepareStatement(sql);		
+			rs = psmt.executeQuery();			
 			while(rs.next())
 			{
+				result = new UserVo();
 				result.setUserNum(rs.getInt("userNum"));
 				result.setEmail(rs.getString("email"));
 				result.setPassword(rs.getString("password"));
@@ -128,7 +128,7 @@ public class UserDao {
 				result.setGender(rs.getShort("gender"));
 				result.setDate_Of_Birth(rs.getDate("date_Of_Birth"));
 				result.setKakao_ID(rs.getString("kakao_Id"));
-				result.setApproved(rs.getBoolean("isApproved"));
+				result.setIsApproved(rs.getBoolean("isApproved"));
 			}
 		}
 		catch(Exception e)
@@ -141,7 +141,45 @@ public class UserDao {
 		}
 		return result;
 	}
-
+	
+	public UserVo SelectUser_byUserNum(UserVo user)
+	{		
+		Connection conn = null;
+		PreparedStatement psmt = null;
+		String sql = null;
+		ResultSet rs = null;
+		UserVo result = null;		
+		try
+		{
+			conn = connect();
+			sql = String.format("select * from user where userNum = %d",user.getUserNum());
+			System.out.println(sql);
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();			
+			while(rs.next())
+			{
+				result = new UserVo();
+				result.setUserNum(rs.getInt("userNum"));
+				result.setEmail(rs.getString("email"));
+				result.setPassword(rs.getString("password"));
+				result.setName(rs.getString("name"));
+				result.setGender(rs.getShort("gender"));
+				result.setDate_Of_Birth(rs.getDate("date_Of_Birth"));
+				result.setKakao_ID(rs.getString("kakao_Id"));
+				result.setIsApproved(rs.getBoolean("isApproved"));	
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println("UserDao : selectUser_byUserNum error : " + e);
+		}
+		finally
+		{
+			close(conn, psmt);
+		}
+		return result;
+	}
+	
 	public ArrayList<UserVo> selectUsers(UserVo vo) {
 		// TODO Auto-generated method stub
 		Connection conn = null;
@@ -152,9 +190,8 @@ public class UserDao {
 		try
 		{
 			conn = connect();
-			sql = "select * from user where email = ?";
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(0,vo.getEmail());
+			sql = String.format("select * from user");
+			psmt = conn.prepareStatement(sql);			
 			rs = psmt.executeQuery();
 			list = new ArrayList<UserVo>();
 			
@@ -168,7 +205,7 @@ public class UserDao {
 		}
 		catch(Exception e)
 		{
-			System.out.println("UserDao : selectUser error : " + e);
+			System.out.println("UserDao : selectUsers error : " + e);
 		}
 		finally
 		{

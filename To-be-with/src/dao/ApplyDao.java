@@ -173,5 +173,42 @@ public class ApplyDao {
 		}
 		return result;
 	}
+
+	public ArrayList<ApplyVo> getApplyList_ByTravelNum(ApplyVo vo) {
+		
+		ArrayList<ApplyVo> list = null;
+		Connection conn = null;
+		PreparedStatement psmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		ApplyVo apply = null;
+		
+		try
+		{
+			list = new ArrayList<ApplyVo>();
+			conn = connect();
+			sql = String.format("select * from apply where travelNum = %d",vo.getTravelNum());
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			while(rs.next())
+			{
+				apply = new ApplyVo();
+				apply.setApplyNum(rs.getInt("applyNum"));
+				apply.setUserNum(rs.getInt("userNum"));
+				apply.setTravelNum(rs.getInt("travelNum"));
+				apply.setIsApproved(rs.getBoolean("isApproved"));
+				list.add(apply);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println("ApplyDao : getApplyList_ByTravelNum error : " + e);
+		}
+		finally
+		{
+			close(conn, psmt);
+		}
+		return list;
+	}
 	
 }

@@ -77,5 +77,12 @@ public class ReportVo {
 	public void setApproved(boolean isApproved) {
 		this.isApproved = isApproved;
 	}
+
+	@Override
+	public String toString() {
+		return "ReportVo [reportNum=" + reportNum + ", reporterNum=" + reporterNum + ", reportedUserNum="
+				+ reportedUserNum + ", title=" + title + ", content=" + content + ", type=" + type + ", objectNum="
+				+ objectNum + ", isApproved=" + isApproved + "]";
+	}
 	
 }
