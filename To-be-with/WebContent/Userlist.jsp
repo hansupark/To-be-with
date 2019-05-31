@@ -32,21 +32,18 @@
         UserVo vo=new UserVo();
 
 		UserService service = UserService.getInstance();
-        //dao.dbConn();   db 연결 확인 작업
-        
-         ArrayList<UserVo> list = service.selectUsers_Admin(vo);
-         for(UserVo dto:list){
-                     
+         ArrayList<UserVo> list = service.selectUsers(vo);
+         for(UserVo dto:list){        
 %>
  
         <tr>
-                <td><%=vo.getName() %></td>
-                <td><%=vo.getEmail() %></td>
-                <td><%=vo.getPassword() %></td>
-                <td><%=vo.getGender() %></td>
-                <td><%=vo.getDate_Of_Birth() %></td>
-                <td><%=vo.getPhone_Number() %></td>
-        		<td><%=vo.getKakao_ID() %></td>
+                <td><%=dto.getName() %></td>
+                <td><%=dto.getEmail() %></td>
+                <td><%=dto.getPassword() %></td>
+                <td><%=dto.getGender() %></td>
+                <td><%=dto.getDate_Of_Birth() %></td>
+                <td><%=dto.getPhone_Number() %></td>
+        		<td><%=dto.getKakao_ID() %></td>
         </tr>
 <%
  

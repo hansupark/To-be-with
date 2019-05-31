@@ -50,6 +50,11 @@ public class UserService {
 		return dao.SelectUser(vo);
 	}
 	
+	public ArrayList<UserVo> selectUsers(UserVo vo)
+	{
+		return dao.selectUsers(vo);
+	}
+	
 	public UserVo selectUser_byUserNum(UserVo vo)
 	{
 		return dao.SelectUser_byUserNum(vo);
