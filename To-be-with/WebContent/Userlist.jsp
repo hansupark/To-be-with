@@ -41,6 +41,7 @@
                                 <th>생일</th>
                                 <th>전화번호</th>
                                 <th>카카오톡 ID</th>
+                                <th>삭제</th>
                             </tr>
                             <%
   					UserVo vo=new UserVo();
@@ -56,6 +57,7 @@
            			        <td><%=dto.getDate_Of_Birth() %></td>
 			                <td><%=dto.getPhone_Number() %></td>
         					<td><%=dto.getKakao_ID() %></td>
+        					<td><button onclick = "userDelete(<%=dto.getUserNum()%>)">삭제</button></td>
 				</tr>
 				<%
  
@@ -72,4 +74,5 @@
     </div>
 </div>
 </body>
+<script src = "js/user.js"></script>
 </html>
