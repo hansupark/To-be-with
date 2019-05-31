@@ -35,7 +35,6 @@
                 </div>
                 <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign in</button>
                 <div class="text-center">
-                  <a class="small" href="findpwd.jsp">Forgot password?</a>
                   <br>
                   <a class="samll" href="register.jsp">Register</a>
                   <br>
