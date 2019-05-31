@@ -134,7 +134,9 @@ public class ApplyDao {
 		try
 		{
 			conn = connect();
-			sql = String.format("update apply set userNum = %d , travelNum = %d, isApproved = %d where applyNum = %d",vo.getUserNum(),vo.getApplyNum(),vo.getIsApproved());
+			sql = String.format("update apply set userNum = %d , travelNum = %d, isApproved = %b where applyNum = %d",vo.getUserNum(),vo.getTravelNum(),vo.getIsApproved()
+					,vo.getApplyNum());
+			System.out.println(sql);
 			psmt = conn.prepareStatement(sql);
 			result = psmt.executeUpdate();		
 		}
@@ -211,4 +213,38 @@ public class ApplyDao {
 		return list;
 	}
 	
+public ApplyVo getApply(ApplyVo vo) {
+				
+		Connection conn = null;
+		PreparedStatement psmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		ApplyVo apply = null;
+		
+		try
+		{			
+			conn = connect();
+			sql = String.format("select * from apply where applyNum = %d",vo.getApplyNum());
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			while(rs.next())
+			{
+				apply = new ApplyVo();
+				apply.setApplyNum(rs.getInt("applyNum"));
+				apply.setUserNum(rs.getInt("userNum"));
+				apply.setTravelNum(rs.getInt("travelNum"));
+				apply.setIsApproved(rs.getBoolean("isApproved"));			
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println("ApplyDao : getAppl error : " + e);
+		}
+		finally
+		{
+			close(conn, psmt);
+		}
+		return apply;
+	}
+
 }

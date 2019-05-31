@@ -200,6 +200,12 @@ public class UserDao {
 				UserVo result = new UserVo();
 				result.setUserNum(rs.getInt("userNum"));
 				result.setEmail(rs.getString("email"));
+				result.setPassword(rs.getString("password"));
+				result.setName(rs.getString("name"));
+				result.setGender(rs.getShort("gender"));
+				result.setDate_Of_Birth(rs.getDate("date_Of_Birth"));
+				result.setKakao_ID(rs.getString("kakao_Id"));
+				result.setIsApproved(rs.getBoolean("isApproved"));
 				list.add(result);
 			}
 		}

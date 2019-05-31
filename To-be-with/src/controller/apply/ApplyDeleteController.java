@@ -15,7 +15,7 @@ import vo.ApplyVo;
 import vo.TravelVo;
 import vo.UserVo;
 
-public class ApplyInsertController implements Controller{
+public class ApplyDeleteController implements Controller{
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
@@ -24,14 +24,12 @@ public class ApplyInsertController implements Controller{
 		res.setContentType("text/html; charset = UTF-8"); 
 		
 		ApplyService service = ApplyService.getService();
-		int travelNum = Integer.parseInt(req.getParameter("travelNum"));
-		int userNum = Integer.parseInt(req.getParameter("userNum"));
+		int applyNum = Integer.parseInt(req.getParameter("applyNum"));
 		int result = 0;
 		
 		ApplyVo vo = new ApplyVo();
-		vo.setTravelNum(travelNum);
-		vo.setUserNum(userNum);
-		result = service.applyInsert(vo);
+		vo.setApplyNum(applyNum);
+		result = service.applyDelete(vo);
 		
 		PrintWriter out = res.getWriter();
 		out.write("" + result);

@@ -25,7 +25,6 @@ public class TravelSearchController implements Controller{
 		res.setContentType("text/html; charset = UTF-8"); 
 		TravelService service = TravelService.getService();
 		ArrayList<TravelVo> list = new ArrayList<TravelVo>();
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd");
 		
 		TravelVo vo = new TravelVo();
 		String country = req.getParameter("country");

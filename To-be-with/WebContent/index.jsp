@@ -122,7 +122,7 @@
             </a>
           </div>
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-            <a href="#" class="unit-1 text-center">
+            <a href="search.jsp" class="unit-1 text-center">
               <img src="images/img_1.jpg" alt="Image" class="img-fluid">
               <div class="unit-1-text">
                 <h3 class="unit-1-heading">Find Your Travel Partners</h3>

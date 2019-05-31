@@ -18,7 +18,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto">
-              <h3 class="login-heading mb-4">Upload your passport</h3>
+              <h3 class="login-heading mb-4">Upload your image for Approve</h3>
               <form method="post" action="UserLoginController.do">
                 <div class="form-label-group">
                   <input type="file" name="passport" id="passport" class="form-control" placeholder="passport" required autofocus>

@@ -10,11 +10,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <%
+	int LoginUserNum = (int) session.getAttribute("LoginUserNum");
 	TravelVo vo = new TravelVo(); /* 로그인 구현 완료시 다시 수정 */
 	ApplyVo vo_A = new ApplyVo();
-	vo.setUserNum(1); /* 로그인 구현 완료시 다시 수정 */
+	vo.setUserNum(LoginUserNum); /* 로그인 구현 완료시 다시 수정 */
 	ArrayList<TravelVo> list_travel = TravelDao.getInstance().getTravels_ByUserNum(vo);
 	ArrayList<ApplyVo> list_apply;
 %>
@@ -28,9 +30,11 @@
 			list_apply = ApplyService.getService().getApplyList_ByTravelNum(vo_A);
 			for(ApplyVo apply : list_apply)
 			{
-				out.println("신청한 회원 넘버 : " + apply.getUserNum() + "<br>");
+				out.println("신청한 회원 넘버 : " + apply.getUserNum() + " ");
+				out.println(String.format("<button onclick = \"applyAccept(%d,%d);\">수락</button><br>",apply.getApplyNum(),apply.getTravelNum()));
 			}
 		}
 	%>
 </body>
+<script src = "js/apply.js"></script>
 </html>

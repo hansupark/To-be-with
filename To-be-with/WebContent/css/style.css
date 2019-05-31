@@ -1135,6 +1135,8 @@ h1, h2, h3, h4, h5,
     .unit-1 .unit-1-text .unit-1-heading {
       font-size: 1.2rem;
       position: relative; }
+      
+      
   .unit-1:hover .unit-1-text {
     bottom: 30px; }
   .unit-1:hover img {

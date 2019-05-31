@@ -215,7 +215,7 @@ public class TravelDao {
 		}						
 		return list;
 	}
-	
+		
 	public int insertTravel(TravelVo vo)
 	{
 		Connection conn = null;
@@ -228,10 +228,11 @@ public class TravelDao {
 			conn = connect();
 			sql = "insert into travel(userNum,travelDate,country,region) values(?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(0,vo.getUserNum());
-			psmt.setString(1,vo.getTravelDate());
-			psmt.setString(2,vo.getCountry());
-			psmt.setString(3,vo.getRegion());
+			psmt.setInt(1,vo.getUserNum());
+			java.sql.Date date = java.sql.Date.valueOf(vo.getTravelDate());
+			psmt.setDate(2,date);
+			psmt.setString(3,vo.getCountry());
+			psmt.setString(4,vo.getRegion());
 			result = psmt.executeUpdate();
 		}
 		catch(Exception e)
@@ -250,18 +251,24 @@ public class TravelDao {
 		Connection conn = null;
 		PreparedStatement psmt = null;
 		String sql = null;
+		SimpleDateFormat transFormat = new SimpleDateFormat("yyyy-MM-dd");
 		int result = 0;
 		
 		try
 		{
 			conn = connect();
-			sql = "update set travel userNum = ?,travelDate = ?,country= ?,region= ? where travelNum = ?";
+			sql = "update travel set userNum = ?,travelDate = ?,country= ?,region= ?,maxCount = ?, currentCount = ?, title = ?, content = ? where travelNum = ?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(0,vo.getUserNum());
-			psmt.setString(1,vo.getTravelDate());
-			psmt.setString(2,vo.getCountry());
-			psmt.setString(3,vo.getRegion());
-			psmt.setInt(5,vo.getTravelNum());
+			java.sql.Date date = java.sql.Date.valueOf(vo.getTravelDate());
+			psmt.setInt(1,vo.getUserNum());
+			psmt.setDate(2,date);
+			psmt.setString(3,vo.getCountry());
+			psmt.setString(4,vo.getRegion());						
+			psmt.setInt(5, vo.getMax_Count());
+			psmt.setInt(6,vo.getCurrent_Count());	
+			psmt.setString(7,vo.getTitle());
+			psmt.setString(8,vo.getContent());
+			psmt.setInt(9,vo.getTravelNum());
 			result = psmt.executeUpdate();
 		}
 		catch(Exception e)
@@ -287,7 +294,7 @@ public class TravelDao {
 			conn = connect();
 			sql = "delete from travel where travelNum = ?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(0,vo.getTravelNum());
+			psmt.setInt(1,vo.getTravelNum());
 			result = psmt.executeUpdate();
 		}
 		catch(Exception e)

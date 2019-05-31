@@ -28,12 +28,17 @@ public class TravelService {
 		return dao.getTravelList(travel);
 	}
 	
+	public ArrayList<TravelVo> getTravelLists_ByUserNum(TravelVo travel)
+	{
+		return dao.getTravels_ByUserNum(travel);
+	}	
+	
 	public int insertTravel(TravelVo travel)
 	{
 		return dao.insertTravel(travel);
 	}
 	
-	public int upadteTravel(TravelVo travel)
+	public int updateTravel(TravelVo travel)
 	{
 		return dao.updateTravel(travel);
 	}
