@@ -7,8 +7,8 @@
 <title>To be with login</title>
 <link type="text/css" rel="stylesheet" href="css/login.css">
 <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
-
 </head>
+
 <body>
 <div class="container-fluid">
   <div class="row no-gutter">
@@ -21,8 +21,8 @@
               <h3 class="login-heading mb-4">Welcome Admin User!</h3>
               <form>
                 <div class="form-label-group">
-                  <input type="text" id="adminid" class="form-control" placeholder="id" required autofocus>
-                  <label for="inputEmail">id</label>
+                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                  <label for="inputEmail">Email address</label>
                 </div>
 
                 <div class="form-label-group">
@@ -36,6 +36,7 @@
                 </div>
                 <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign in</button>
                 
+               	  
               </form>
             </div>
           </div>
