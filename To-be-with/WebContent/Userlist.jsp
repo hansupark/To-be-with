@@ -37,7 +37,7 @@
                         <thead>
                             <tr>
                                 <th>이름</th>
-                                <th>E-mail</th> <!-- 게시물 들어갈 수 있는 태그 -->
+                                <th>E-mail</th> 
                                 <th>Password</th>
                                 <th>성별</th>
                                 <th>생일</th>
