@@ -24,3 +24,30 @@ function userDelete(_userNum)
 	);
 	location.reload();
 }
+
+function userApprove(_userNum)
+{
+	$.ajax
+	(
+	{
+		type : "POST",
+		url : "userApprove.do",
+		data : 
+			{
+			userNum : _userNum
+			},
+		success : function(result)
+		{			
+			if(result == 1)
+			{
+				alert("승인 성공");
+			}
+			else
+			{
+				alert("승인 실패");
+			}
+		}
+	}
+	);
+	location.reload();
+}

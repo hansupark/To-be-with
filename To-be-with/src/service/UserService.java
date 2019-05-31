@@ -65,4 +65,9 @@ public class UserService {
 	public int userDelete(UserVo user) {
 		return dao.deleteUser(user);
 	}
+
+	public int userUpdate(UserVo user) {
+		// TODO Auto-generated method stub
+		return dao.UpdateUser(user);
+	}
 }

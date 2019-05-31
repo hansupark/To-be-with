@@ -112,17 +112,18 @@ public class UserDao {
 		{
 			conn = connect();
 			sql = "update user set email = ?,password = ?,name = ?,gender = ?,date_Of_Birth = ?,kakao_Id"
-					+ " = ?  phone_Number = ? where userNum = ?";
+					+ " = ?,  phone_Number = ?, isApproved = ? where userNum = ?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1,user.getUserNum());
+			psmt.setString(1,user.getEmail());
 			psmt.setString(2,user.getPassword());
 			psmt.setString(3,user.getName());
 			psmt.setInt(4,user.getGender());
 			java.sql.Date date = java.sql.Date.valueOf(user.getDate_Of_Birth());
-			psmt.setDate(5,date);
+			psmt.setDate(5, date);
 			psmt.setString(6,user.getKakao_ID());
-			psmt.setInt(7,user.getUserNum());
-			psmt.setString(8, user.getPhone_Number());
+			psmt.setString(7, user.getPhone_Number());
+			psmt.setBoolean(8,user.getIsApproved());
+			psmt.setInt(9, user.getUserNum());
 		    result = psmt.executeUpdate();		    
 		}
 		catch(Exception e)
@@ -157,7 +158,7 @@ public class UserDao {
 				result = new UserVo();
 				result.setUserNum(rs.getInt("userNum"));
 				result.setEmail(rs.getString("email"));
-				result.setPassword(rs.getString("password"));
+				result.setPassword(rs.getString("password"));				
 				result.setName(rs.getString("name"));
 				result.setGender(rs.getShort("gender"));
 				result.setDate_Of_Birth(format.format(rs.getDate("date_Of_Birth")));

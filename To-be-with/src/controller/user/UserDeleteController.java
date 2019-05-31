@@ -17,7 +17,7 @@ public class UserDeleteController implements Controller{
 		// TODO Auto-generated method stub
 		  UserService service = UserService.getInstance();
 		  req.setCharacterEncoding("utf-8");
-	      res.setContentType("texxt/html;charset=utf-8");
+	      res.setContentType("text/html;charset=utf-8");
 	      
 	      int userNum = Integer.parseInt(req.getParameter("userNum"));
 	      int result = 0;

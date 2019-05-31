@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
     isELIgnored="false" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="contextPath"  value="${pageContext.request.contextPath}"  />
 <%@page import="dao.singUpImageDao"%> 
 <%@page import="vo.signUpImageVo" %>
 <%@page import="java.util.ArrayList"%>
@@ -37,31 +34,26 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>이름</th>
-                                <th>생년월일</th> 
-                                <th>성별</th>
-                                <th>email</th>
+                                <th>유저 넘버</th>
+                                <th>image</th> 
+                                <th>승인</th>                               
                             </tr>
                             <%
                         signUpImageVo vo=new signUpImageVo();
-						//signUpImageService service = signUpImageService.getInstance(); //signUpImageService 추가하시오
-         				ArrayList<signUpImageVo> list = service.selectUsers(vo); //서비스함수
+						SignUpImageService service = SignUpImageService.getService(); //signUpImageService 추가하시오
+         				ArrayList<signUpImageVo> list = service.getSignUpImages(vo); //서비스함수
          				for(signUpImageVo dto:list){        
 							%>       
 							<tr>
-                			<td><%=dto.getName() %></td>
-                			<td><%=dto.getDate_Of_Birth() %></td>
-                			<td><%=dto.getGender() %></td>
-                			<td><%=dto.getEmail() %></td>
+                			<td><%=dto.getUserNum() %></td>
+                			<td><img src = <%=dto.getImage()%>/></td>
+                			<td><button onclick = "userApprove(<%=(int)session.getAttribute("LoginUserNum")%>)">승인</button></td>                			
                 			</tr>
 				        <%
  
          					} //for 문의 끝
 						%>
-				        
-
-                        </thead>
-                 
+                        </thead>                 
 					</table>
 
             </div>
@@ -69,4 +61,5 @@
     </div>
 </div>
 </body>
+<script src = "js/user.js"></script>
 </html>

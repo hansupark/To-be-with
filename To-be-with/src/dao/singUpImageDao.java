@@ -76,15 +76,14 @@ public class singUpImageDao {
 		{
 			list = new ArrayList<signUpImageVo>();
 			conn = connect();
-			sql = String.format("select * from apply");
+			sql = String.format("select * from signupimage");
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
 			while(rs.next())
 			{
-				vo = new signUpImageVo();
-				vo.setImageNum(rs.getInt("imageNum"));
+				vo = new signUpImageVo();				
 				vo.setUserNum(rs.getInt("userNum"));
-				vo.setImage(rs.getString("imageSource"));
+				vo.setImage(rs.getString("image"));
 				list.add(vo);
 			}
 		}
@@ -109,9 +108,10 @@ public class singUpImageDao {
 		try
 		{
 			conn = connect();
-			sql = String.format("insert into signUpImage(image) value(?)");
+			sql = String.format("insert into signUpImage(image,userNum) value(?,?)");
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1,image.getImage());
+			psmt.setInt(2,image.getUserNum());
 			result = psmt.executeUpdate();		
 		}
 		catch(Exception e)

@@ -22,13 +22,13 @@ public class UserLoginController implements Controller{
 		UserService service = UserService.getInstance();
 		int result;
 		String email = req.getParameter("email");
-		String pw = req.getParameter("pw");
+		String pw = req.getParameter("password");
 		
 		UserVo user = new UserVo();
 		user.setEmail(email);
 		user.setPassword(pw);
-		result = service.userLogin(user);
 		
+		result = service.userLogin(user);		
 		if(result == -1)
 		{
 			res.getWriter().println("<script>alert('비밀번호가 맞지않습니다.'); location.href='login.jsp';</script>");

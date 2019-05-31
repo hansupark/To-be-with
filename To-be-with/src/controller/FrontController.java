@@ -17,6 +17,7 @@ import controller.report.ReportInsertController;
 import controller.signUpImage.SignUpImageInsertController;
 import controller.travel.TravelIncreaseCountController;
 import controller.travel.TravelSearchController;
+import controller.user.UserApproveController;
 import controller.user.UserDeleteController;
 import controller.user.UserLoginController;
 
@@ -35,6 +36,7 @@ public class FrontController extends HttpServlet{
 		
 		list.put("/userLogin.do",new UserLoginController());
 		list.put("/userDelete.do",new UserDeleteController());
+		list.put("/userApprove.do",new UserApproveController());
 		
 		list.put("/applyAccept.do",new ApplyAcceptController());
 		list.put("/applyInsert.do",new ApplyInsertController());

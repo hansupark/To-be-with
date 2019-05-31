@@ -22,11 +22,12 @@
                 <div class="form-label-group">               
                   <form method="post" enctype="multipart/form-data" action="uploadimage.do"> <!-- miltipart/form-data servlet에 피일을 준다는 신호줌 -->
 					<input type="file" name="file" id="passport" class="form-control" placeholder="image" required autofocus>				
+					<button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Upload</button>
 				  </form>
                 </div>
 
        
-                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Upload</button>
+                
        
                 <div class="text-center">
                   <a class="small" href="login.jsp">Go Sign In</a>
