@@ -27,9 +27,7 @@
             </div>
             <div class="row">
                   <div class="col-lg-12">
-                      <button type="button" onclick="location.href='uploadstory.jsp'" class="btn btn-outline btn-primary pull-right">
-                          <i class="fa fa-edit fa-fw"></i> 글쓰기
-                      </button>
+                      
                   </div>
               </div>
             <div class="panel panel-default">
