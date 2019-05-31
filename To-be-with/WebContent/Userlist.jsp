@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
     isELIgnored="false" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="contextPath"  value="${pageContext.request.contextPath}"  />
 <%@page import="dao.UserDao"%> 
 <%@page import="vo.*" %>
 <%@page import="java.util.ArrayList"%>
@@ -55,8 +52,8 @@
                 			<td><%=dto.getName() %></td>
                 			<td><%=dto.getEmail() %></td>
                 			<td><%=dto.getPassword() %></td>
-              			        <td><%=dto.getGender() %></td>
-            			        <td><%=dto.getDate_Of_Birth() %></td>
+           			        <td><%=dto.getGender() %></td>
+           			        <td><%=dto.getDate_Of_Birth() %></td>
 			                <td><%=dto.getPhone_Number() %></td>
         					<td><%=dto.getKakao_ID() %></td>
 				</tr>
