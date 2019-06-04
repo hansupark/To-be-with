@@ -104,7 +104,20 @@
             </div>
           </div>
         </div>
-      </div>  
+      </div>
+      
+      <div class="site-blocks-cover overlay" style="background-image: url(images/hero_bg_3.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center text-center">
+
+            <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
+              <h1 class="text-white font-weight-light">Travel Information</h1>
+              <p class="mb-5">To-Be-With가 여행정보를 드립니다!</p>
+              <p><a href="#" class="btn btn-primary py-3 px-5 text-white">To Be With!</a></p>
+            </div>
+          </div>
+        </div>
+      </div>    
 
     </div>
 
@@ -128,7 +141,16 @@
                 <h3 class="unit-1-heading">Find Your Travel Partners</h3>
               </div>
             </a>
-          </div>                 
+          </div>
+          
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+            <a href="search.jsp" class="unit-1 text-center">
+              <img src="images/img_3.jpg" alt="Image" class="img-fluid">
+              <div class="unit-1-text">
+                <h3 class="unit-1-heading">Travel Information</h3>
+              </div>
+            </a>
+          </div>                   
         </div>
       </div>
     

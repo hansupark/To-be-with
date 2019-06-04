@@ -10,7 +10,6 @@
 <link type="text/css" rel="stylesheet" href="css/all.css"/>
 <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
 
-
 </head>
 <body>
   <div class="container">
@@ -18,11 +17,11 @@
       <div class="col-lg-10 col-xl-9 mx-auto">
         <div class="card card-signin flex-row my-5">
           <div class="card-img-left d-none d-md-flex">
-             <!-- Background image for card set in CSS! -->
+             <img src = "images/sign.svg">
           </div>
           <div class="card-body">
             <h5 class="card-title text-center">Register</h5>
-            <form class="form-signin" method="post" action="UserRegisterController.do">
+            <form class="form-signin" method="post" action="userRegister.do">
               <div class="form-label-group">
                 <input type="text" name="name"id="inputUserame" class="form-control" placeholder="Username" required autofocus>
                 <label for="inputUserame">Username</label>
@@ -79,4 +78,6 @@
     </div>
   </div>
 </body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.2.0.min.js" ></script>
+<script src = "js/pwcheck.js"></script>
 </html>

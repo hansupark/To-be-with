@@ -20,6 +20,7 @@ import controller.travel.TravelSearchController;
 import controller.user.UserApproveController;
 import controller.user.UserDeleteController;
 import controller.user.UserLoginController;
+import controller.user.UserRegisterController;
 
 
 public class FrontController extends HttpServlet{
@@ -35,6 +36,7 @@ public class FrontController extends HttpServlet{
 		list.put("/reportApprove.do",new ReportAcceptController());
 		
 		list.put("/userLogin.do",new UserLoginController());
+		list.put("/userRegister.do",new UserRegisterController());
 		list.put("/userDelete.do",new UserDeleteController());
 		list.put("/userApprove.do",new UserApproveController());
 		
