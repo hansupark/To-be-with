@@ -1,67 +1,53 @@
 package controller.travel;
 
+
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import controller.Controller;
-import service.ApplyService;
-import service.UserService;
-import vo.ApplyVo;
-import vo.TravelVo;
-import vo.UserVo;
-import dao.TravelDao;
+import controller.HttpUtil;
 import service.TravelService;
+import vo.TravelVo;
+import dao.TravelDao;
 
-public class TravelDeleteController  {
+	public class TravelInsertController implements Controller {
+		
+		public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+			// TODO Auto-generated method stub
+			req.setCharacterEncoding("UTF-8");
+			res.setContentType("text/html; charset = UTF-8");	
+           
+			String title = req.getParameter("title");
+		    String content = req.getParameter("content");
+		    String region = req.getParameter("region");
+		    String country = req.getParameter("country");
+		    
+		    
+	       TravelDao Dao = TravelDao.getInstance();
+		   TravelVo TravelVo = new TravelVo();
+	  
+		    TravelVo.setTitle(title);
+	        TravelVo.setContent(content);
+	        TravelVo.setRegion(region);
+	        TravelVo.setCountry(country);
+	        
+		  //TravelDao.setId(sessionID);
+         TravelService service = TravelService.getService();
+         int result = service.insertTravel(TravelVo);
+		System.out.println(result);
+		//res.sendRedirect("reseultList.do");
+		
 	
-	public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		  TravelService service = TravelService.getService();
-		  req.setCharacterEncoding("utf-8");
-	      res.setContentType("texxt/html;charset=utf-8");
-	      
-	      int Travellist = Integer.parseInt(req.getParameter("travelNum"));
-	      int result = 0;
-	      
-	      TravelVo travel = new TravelVo();
-	      travel.setTravelNum(Travellist);
-	      result = service.deleteTravel(travel);
-	      
-	      res.getWriter().write(""+result);
-	      return;
+		HttpUtil.forward(req,res,"resultList.jsp");
 	}
-			 
+	
 }
 
-/*public int deleteTravel(TravelVo vo)
-{
-	Connection conn = null;
-	PreparedStatement psmt = null;
-	String sql = null;
-	int result = 0;
-	
-	try
-	{
-		conn = connect();
-		sql = "delete from travel where travelNum = ?";
-		psmt = conn.prepareStatement(sql);
-		psmt.setInt(1,vo.getTravelNum());
-		result = psmt.executeUpdate();
-	}
-	catch(Exception e)
-	{
-		System.out.println("TravelDao : deleteTravel -> exception ¹ß»ý : " + e);
-	}
-	finally
-	{
-		close(conn, psmt);
-	}
-	return result;
-}
-*/
