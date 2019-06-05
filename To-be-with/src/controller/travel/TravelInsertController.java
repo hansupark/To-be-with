@@ -31,8 +31,7 @@ import dao.TravelDao;
 	    String country = req.getParameter("country");
 	    String travelDate = req.getParameter("date");
 	    int userNum= (int) req.getSession().getAttribute("LoginUserNum");
-	    int max_Count = (int) req.getSession().getAttribute("max_Count");
-        TravelDao Dao = TravelDao.getInstance();
+	    int max_Count = Integer.parseInt(req.getParameter("max_Count"));
 	    TravelVo TravelVo = new TravelVo();
   
 	    TravelVo.setTitle(title);
@@ -45,8 +44,7 @@ import dao.TravelDao;
          TravelService service = TravelService.getService();
          int result = service.insertTravel(TravelVo);
 		 System.out.println(result);
-		//res.sendRedirect("reseultList.do");
-		HttpUtil.forward(req,res,"resultList.jsp");
+		HttpUtil.forward(req,res,"profile.jsp");
 		return;
 	}
 	

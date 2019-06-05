@@ -24,23 +24,21 @@ public class TravelUpdateController implements Controller {
 	
 	public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
     
-		TravelService service = TravelService.getService();
-		
-		  
-		req.setCharacterEncoding("UTF-8");
-		res.setContentType("text/html; charset = UTF-8"); 
-		
-		int num = Integer.parseInt(req.getParameter("travelNum")); // 수정할 게시글의 번호를 받아온다. 사실 굳이 있어야 될 까 싶다..잘짠 건가..
+			TravelService service = TravelService.getService();
+			req.setCharacterEncoding("UTF-8");
+			res.setContentType("text/html; charset = UTF-8"); 
+			 int num = Integer.parseInt(req.getParameter("travelNum")); 
 		     TravelVo modify = new TravelVo(); 	
-		      modify.setContent("num");
-		      modify.setTitle("num");
-		      
-		    int result = service.updateTravel(modify);      
-		     
-		    System.out.println(result);
-		
-			HttpUtil.forward(req,res,"resultList.jsp");   // 마지막 넘겨줄 때 이렇게 하는 게 맞나 싶 ㄷ ㅏ...
-		            
-    
+		     modify.setTravelNum(num);
+		     modify = service.getTravel(modify);    
+		     modify.setCountry(req.getParameter("country"));
+		     modify.setRegion(req.getParameter("region"));
+		     modify.setMax_Count(Integer.parseInt(req.getParameter("max_Count")));
+		     modify.setTitle(req.getParameter("title"));
+		     modify.setContent(req.getParameter("content"));
+		     modify.setTravelDate(req.getParameter("travelDate"));
+		     int result = service.updateTravel(modify);		
+			HttpUtil.forward(req,res,"resultList.jsp");
+			return;
 	}}
 

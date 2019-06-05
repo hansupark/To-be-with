@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/controller/HttpUtil.java=UTF-8
+encoding//src/controller/travel/TravelUpdateController.java=UTF-8
 encoding//src/controller/user/UserRegisterController.java=UTF-8
+encoding//src/controller/user/UserUpdateController.java=UTF-8
 encoding//src/dao/UserDao.java=UTF-8

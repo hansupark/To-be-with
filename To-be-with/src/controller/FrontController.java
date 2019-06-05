@@ -25,6 +25,7 @@ import controller.user.UserApproveController;
 import controller.user.UserDeleteController;
 import controller.user.UserLoginController;
 import controller.user.UserRegisterController;
+import controller.user.UserUpdateController;
 
 
 public class FrontController extends HttpServlet{
@@ -45,6 +46,7 @@ public class FrontController extends HttpServlet{
 		list.put("/userRegister.do",new UserRegisterController());
 		list.put("/userDelete.do",new UserDeleteController());
 		list.put("/userApprove.do",new UserApproveController());
+		list.put("/userUpdate.do",new UserUpdateController());
 		
 		list.put("/applyAccept.do",new ApplyAcceptController());
 		list.put("/applyInsert.do",new ApplyInsertController());

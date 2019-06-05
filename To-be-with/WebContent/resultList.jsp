@@ -56,11 +56,15 @@
                         	
                         	<%
                         		for(TravelVo travel : list)
-                        		{%>
+                        		{
+                        			UserVo vou = new UserVo();
+                        			vou.setUserNum(travel.getUserNum());
+                        			vou = UserService.getInstance().selectUser_byUserNum(vou);
+                        		%>
                         			<tr>
                         			<td><%=String.format("<a href =\"javascript:loadModal(%s,%s);\">%s</a>",
                         			"\'" + travel.getTitle() + "\'","\'" +travel.getContent() + "\'",travel.getTitle())%></td>
-	                        		<td><%=travel.getUserNum()%></td>
+	                        		<td><%=vou.getName()%></td>
 	                        		<td>
 	                        		<%
 	                        		if(list_Apply_user.size() != 0) //신청을 해놓은게 아예없을때

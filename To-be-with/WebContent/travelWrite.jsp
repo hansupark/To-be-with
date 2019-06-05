@@ -78,29 +78,35 @@ text-align :center;
  
 <div class="container">
  
-      <div class="formgroup">
-        <label for="subject">제목</label>
-        <input type="text" class="form-control" id="subject" name="subject" placeholder="제목을 입력하세요.">
-      </div>
-      <label for="subject">나라 입력</label>
-	   <input type="text"  placeholder="나라 "  name = "country">
-	   <label for="subject">지역 입력</label>
-		<input  type="text"  placeholder="지역" id = "region" name = "region" >
-	  
-	   <label for = "count1">인원수 선택</label>
-	   <input type = "text" placeholder = "최대 3명까지"  id = "count" name= "count" > 
- 
-
-        <div class="input-group date">
-    
-        <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-        
-        </div>
-        <label for=content">내용</label>
-        <textarea class="form-control" id="content" name="content" rows="3"></textarea>
-    
-      <button type="submit" class="btn btn-primary">작성</button>  </div>   
-
+      <form action = "travelInsert.do" method = "POST">
+	      	<div class="formgroup">
+	        <label for="subject">제목</label>
+	        <input type="text" class="form-control" id="subject" name="title" placeholder="제목을 입력하세요.">
+	        </div>
+	        <label for="subject">나라 입력</label>
+		    <input list = "browsers" class="search_input search_input_1" placeholder="Country" id = "country" name = "country">
+			<datalist id="browsers">
+			    
+		    </datalist>
+			<input list = "browsers_2" class="search_input search_input_2" placeholder="Region" id = "region" name = "region" >
+			<datalist id="browsers_2">
+			    
+		    </datalist>
+		  
+		   <label for = "count1">인원수 선택</label>
+		   <input type = "text" placeholder = "최대 3명까지"  id = "count" name= "max_Count" > 
+	 
+	
+	        <div class="input-group date">
+	    
+	        <input type="text" name = "date" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>        
+	        </div>
+	        <label for=content">내용</label>
+	        <textarea class="form-control" id="content" name="content" rows="3"></textarea>
+	    
+	      <button type="submit" class="btn btn-primary">작성</button>  </div>   
+      </form>
 </body>
+<script src = "js/travel.js"></script>
 </html>
 

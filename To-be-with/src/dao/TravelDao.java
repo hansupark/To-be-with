@@ -111,6 +111,7 @@ public class TravelDao {
 			while(rs.next())
 			{
 				TravelVo travel = new TravelVo();
+				travel.setUserNum(rs.getInt("userNum"));
 				travel.setTravelNum(rs.getInt("travelNum"));
 				travel.setCountry(rs.getString("country"));
 				travel.setRegion(rs.getString("region"));		
@@ -220,17 +221,20 @@ public class TravelDao {
 	{
 		Connection conn = null;
 		PreparedStatement psmt = null;
-		String sql = null;
+		String sql = null;		
 		int result = 0;
-		
 		try
 		{
 			conn = connect();
 			sql = "insert into travel(userNum,travelDate,country,region,title,content,maxCount) values(?,?,?,?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1,vo.getUserNum());
-			java.sql.Date date = java.sql.Date.valueOf(vo.getTravelDate());
-			psmt.setDate(2,date);
+			psmt.setInt(1,vo.getUserNum());		
+			System.out.println(vo.getTravelDate());
+			String date[] = vo.getTravelDate().split("/");
+			int year = Integer.parseInt(date[0]);
+			int month = Integer.parseInt(date[1]);
+			int day = Integer.parseInt(date[2]);			
+			psmt.setDate(2,new java.sql.Date(year-1900,month,day));		
 			psmt.setString(3,vo.getCountry());
 			psmt.setString(4,vo.getRegion());
 			psmt.setString(5,vo.getTitle());
@@ -262,9 +266,12 @@ public class TravelDao {
 			conn = connect();
 			sql = "update travel set userNum = ?,travelDate = ?,country= ?,region= ?,maxCount = ?, currentCount = ?, title = ?, content = ? where travelNum = ?";
 			psmt = conn.prepareStatement(sql);
-			java.sql.Date date = java.sql.Date.valueOf(vo.getTravelDate());
+			String date[] = vo.getTravelDate().split("/");
+			int year = Integer.parseInt(date[0]);
+			int month = Integer.parseInt(date[1]);
+			int day = Integer.parseInt(date[2]);						
 			psmt.setInt(1,vo.getUserNum());
-			psmt.setDate(2,date);
+			psmt.setDate(2,new java.sql.Date(year-1900,month,day));		
 			psmt.setString(3,vo.getCountry());
 			psmt.setString(4,vo.getRegion());						
 			psmt.setInt(5, vo.getMax_Count());

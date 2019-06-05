@@ -68,34 +68,24 @@
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="home">
-                            <form>
+                            <form action = "userUpdate.do" method = "post">
                               <div class="form-group">
                                 <label for="inputName">Name</label>
-                                <input type="text" class="form-control" id="inputName" placeholder="Name" >
-                              </div>
-                                <div class="form-group">
-                                <label for="inputLastName">Last Name</label>
-                                <input type="text" class="form-control" rows="5" id="inputLastName" placeholder="Last Name">
-                              </div>
+                                <input type="text" class="form-control" id="inputName" name = "name" value = <%=vou.getName()%> placeholder="Name" >
+                              </div>	                                
                               <div class="form-group">
                                 <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                <input type="email" class="form-control" id="exampleInputEmail1" value = <%=vou.getEmail()%> name = "email" placeholder="Email">
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">birth_Of_Date</label>
+                                <input type="date" class="form-control" id="birth_of_Date" value = <%=vou.getDate_Of_Birth()%> name = "birth_of_Date">
                               </div>
                               <div class="form-group">
                                 <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                              </div>
-                              <div class="form-group">
-                                <label for="exampleInputFile">File input</label>
-                                <input type="file" id="exampleInputFile">
-                                <p class="help-block">Example block-level help text here.</p>
-                              </div>
-                              <div class="checkbox">
-                                <label>
-                                  <input type="checkbox"> Check me out
-                                </label>
-                              </div>
-                              <button type="submit" class="btn btn-default">Submit</button>
+                                <input type="password" class="form-control" id="exampleInputPassword1" value = <%=vou.getPassword()%> name = "password" placeholder="Password">
+                              </div>                              
+                              <button type="submit" class="btn btn-default">수정</button>
                             </form>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="profile">Profile                           
@@ -192,8 +182,10 @@
 								travel.setTravelNum(apply.getTravelNum());
 								travel = TravelService.getService().getTravel(travel);
 							%>
-								나라 : <%=travel.getCountry()%> 지역 : <%=travel.getRegion() %> 날짜 : <%=travel.getTravelDate()%> <br>	
-							<%	
+								나라 : <%=travel.getCountry()%> 지역 : <%=travel.getRegion() %> 날짜 : <%=travel.getTravelDate()%>
+								<button onclick = "applyCancel(<%=apply.getApplyNum()%>,<%=apply.getTravelNum()%>)">취소</button>	
+							<%
+								
 							}
 							%>                  
                         </div> 
