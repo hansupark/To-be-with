@@ -26,9 +26,9 @@
 <title>boardList</title>
 </head>
 <body>
-<div class="page-wrapper">
+<div class="container">
     <div class="container-fluid" align = center>
-        <div class="col-lg-8"><!--게시판 넓이 -->
+       
             <div class="col-lg-12">
                 <h1 class="page-header">동행 찾기</h1>
             </div>
