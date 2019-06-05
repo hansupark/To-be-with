@@ -34,14 +34,10 @@
 						<div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
 							<div class="logo"><a href="index.jsp">Tobewith</a></div> <!-- jsp로 바꾸고 -->
 							<nav class="main_nav">
-								<ul class="d-flex flex-row align-items-start justify-content-start">
-									<li class="active"><a href="index.jsp">Home</a></li> <!-- jsp로 바꾸고 -->
 								
-								</ul>
 							</nav>
 							<div class="header_phone ml-auto">Contact us :Tobewith@cbnu.ac.kr</div>
 
-							<!-- Hamburger -->
 
 							<div class="hamburger ml-auto">
 								<i class="fa fa-bars" aria-hidden="true"></i>
@@ -52,16 +48,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="header_social d-flex flex-row align-items-center justify-content-start">
-			<ul class="d-flex flex-row align-items-start justify-content-start">
-				<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-			</ul>
-		</div>
+		
 	</header>
 
 	<!-- Menu -->
@@ -76,14 +63,7 @@
 		</div>
 		<div class="menu_social">
 			<div class="menu_phone ml-auto">Contact us : Tobewith@cbnu.ac.kr </div>
-			<ul class="d-flex flex-row align-items-start justify-content-start">
-				<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-			</ul>
+			
 		</div>
 	</div>
 	
