@@ -172,8 +172,15 @@
 						<div class="home_search_content">
 							<form action = "travelSearch.do"class="home_search_form" id="home_search_form" method = "post">
 								<div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-									<input type="text" class="search_input search_input_1" placeholder="Country" name = "country">
-									<input type="text" class="search_input search_input_2" placeholder="Region" name = "region" >
+									<input list = "browsers" class="search_input search_input_1" placeholder="Country" id = "country" name = "country">
+									<datalist id="browsers">
+									    
+								    </datalist>
+									<input list = "browsers_2" class="search_input search_input_2" placeholder="Region" id = "region" name = "region" >
+									<datalist id="browsers_2">
+									    
+								    </datalist>
+								    
 									<input type="date" class="search_input search_input_3" placeholder="TravelDate" name = "travelDate" >
 									<!-- <input type="text" class="search_input search_input_4" placeholder="Budget" required="required"> -->
 									<button class="home_search_button" type = "submit">search</button>
@@ -401,5 +408,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="plugins/easing/easing.js"></script>
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
 <script src="js/custom.js"></script>
+<script src="js/travel.js"></script>
 </body>
 </html>
