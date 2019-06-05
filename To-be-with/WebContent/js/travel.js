@@ -41,12 +41,38 @@ function travelSearch()
 }
 
 function loadModal(title,content)
-{
-	$("#myModalLabel").text(title);
-	$("#modal-body").text(content);
+{	
+	$("#myModalLabel_2").text(title);
+	$("#modal-body_2").text(content);
 	$("#fullHeightModalRight").modal();
 }
 
+function travelDelete(_travelNum)
+{
+	$.ajax
+	(
+	{
+		type : "POST",
+		url : "travelDelete.do",
+		data : 
+			{
+			travelNum : _travelNum
+			},
+			success : function(result)
+			{			
+				if(result == 1)
+				{
+					alert("승인 성공");
+				}
+				else
+				{
+					alert("승인 실패");
+				}
+			}
+	}
+	);
+	location.reload();
+}
 function loadTravel()
 {
 	var isLoaded = 0;

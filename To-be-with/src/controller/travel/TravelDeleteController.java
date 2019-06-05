@@ -18,8 +18,8 @@ import vo.UserVo;
 import dao.TravelDao;
 import service.TravelService;
 
-public class TravelDeleteController  {
-	
+public class TravelDeleteController  implements Controller 
+{	
 	public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		  TravelService service = TravelService.getService();
@@ -39,29 +39,3 @@ public class TravelDeleteController  {
 			 
 }
 
-/*public int deleteTravel(TravelVo vo)
-{
-	Connection conn = null;
-	PreparedStatement psmt = null;
-	String sql = null;
-	int result = 0;
-	
-	try
-	{
-		conn = connect();
-		sql = "delete from travel where travelNum = ?";
-		psmt = conn.prepareStatement(sql);
-		psmt.setInt(1,vo.getTravelNum());
-		result = psmt.executeUpdate();
-	}
-	catch(Exception e)
-	{
-		System.out.println("TravelDao : deleteTravel -> exception ¹ß»ý : " + e);
-	}
-	finally
-	{
-		close(conn, psmt);
-	}
-	return result;
-}
-*/
