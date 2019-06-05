@@ -40,7 +40,7 @@
               </div>
               
               <div class="form-label-group">
-                <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Password" required>
+                <input type="password" id="inputConfirmPassword" name = "inputConfirmPassword" class="form-control" placeholder="Password" required>
                 <label for="inputConfirmPassword">Confirm password</label>
               </div>
 

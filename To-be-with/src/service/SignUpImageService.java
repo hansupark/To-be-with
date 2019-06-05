@@ -23,8 +23,18 @@ public class SignUpImageService {
 		return dao.getSignUpImages(image);
 	}
 	
+	public signUpImageVo getSignUpImage(signUpImageVo image)
+	{
+		return dao.getSignUpImage(image);
+	}
+	
 	public int InsertSignUpImage(signUpImageVo image)
 	{
 		return dao.insertSignUpImage(image);
+	}
+
+	public int updateSignUpImage(signUpImageVo image) {
+		// TODO Auto-generated method stub
+		return dao.updateSignUpImage(image);
 	}
 }
