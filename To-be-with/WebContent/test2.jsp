@@ -14,23 +14,41 @@
 <head>
 <meta charset="UTF-8">
 <title>To be with login</title>
-<link type="text/css" rel="stylesheet" href="login.css">
-<link type="text/css" rel="stylesheet" href="bootstrap.min.css">
+<link type="text/css" rel="stylesheet" href="css/login.css">
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<style>
+<%
+		HttpUtil.Login(reqest, response);
+		int LoginUserNum = (int) session.getAttribute("LoginUserNum");
+
+		TravelVo vo = new TravelVo(); 
+		ApplyVo vo_A = new ApplyVo();
+		UserVo vou=new UserVo();
+		ReportVo vor=new ReportVo();
+
+		vo.setUserNum(LoginUserNum); /**/
+
+		vo_A.setUserNum(LoginUserNum);
+		vou.setUserNum(LoginUserNum);
+		vor.setReporterNum(LoginUserNum);
 
 
 
-</style>
+		ArrayList<TravelVo> list_travel = TravelService.getService().getTravelLists_ByUserNum(vo);
+                               		
+
+		ArrayList<ApplyVo> list_Apply=ApplyService.getService().getApplyList_ByUserNum(vo_A);
+
+		ArrayList<ReportVo> list_report=ReportService.getService().selectReports_ByReporterNum(vor);
+   
+%> 
+                        
 </head>
 <body>
 <br>
 <div class="form-group">
-
-
    <div class="container" >
     <div class="col-me-12"> 
-   
         <div class="portlet light bordered">
             <div class="portlet-title tabbable-line">
                 <div class="caption caption-md">
@@ -82,82 +100,45 @@
                               <button type="submit" class="btn btn-default">Submit</button>
                             </form>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="profile"  onclick="location.href=test.jsp">Profile
-                        	<div class="panel-heading">User List </div>
-                
-                
-                
-                <%
-                       		HttpUtil.Login(req, res);
-                    		int LoginUserNum = (int) session.getAttribute("LoginUserNum");
-                    		
-                            TravelVo vo = new TravelVo(); 
-                    		ApplyVo vo_A = new ApplyVo();
-                    		UserVo vou=new UserVo();
-        					ReportVo vor=new ReportVo();
-                    		
-                    		vo.setUserNum(LoginUserNum); /**/
-                    		
-                    		vo_A.setUserNum(LoginUserNum);
-                    		vou.setUserNum(LoginUserNum);
-                    		vor.setReporterNum(LoginUserNum);
-                    		
-                    		
-                    		
-                    		ArrayList<TravelVo> list_travel = TravelService.getService().getTravelLists_ByUserNum(vo);
-                    		                               		
-                    		
-                    		ArrayList<ApplyVo> list_Apply=ApplyService.getService().getApplyList_ByUserNum(vo_A);
-                    		
-                    		ArrayList<ReportVo> list_report=ReportService.getService().selectReports_ByReporterNum(vor);
-                    		
-                    	 	/*ArrayList<ReportVo> list_Report_user = ReportService.getService().selectReports_ByReporterNum(vou);
-                    		*/
-                        %> 
-                        
-                <div class="panel-body">
-                    <table class="table table-hover">
-                        <thead>
-                        <!-- 테이블 css 정리하고 -->
-                	        <!-- 아이디 맞게 재설정하고 -->
-                        
-                        <!-- 세션에 들어갈 코드  세션과 일치시킨 후 -->
-                            
-                            <tr>
-                                <th>이름</th>
-                                <td><%=vou.getName() %>   </td>
-                            </tr> 
-                            <tr>
-                                <th>이메일</th>
-                                <td><%=vou.getDate_Of_Birth() %>   </td>
-                            </tr>
-                            <tr>
-                                <th>생년월일</th>
-                                <td><%=vou.getDate_Of_Birth() %>   </td>
-                            </tr>
-                            <tr>
-                                <th>Gender</th>
-                                <td><%=vou.getGender()  %>     </td>
-                            </tr>
-                            <tr>
-                                <th>Birth</th>
-                                <td><%=vou.getDate_Of_Birth() %>     </td>
-                            </tr>
-                            <tr>
-                                <th>KaKaoID</th>
-                                <td><%=vou.getKakao_ID() %>     </td>
-                            </tr>                   
-                            <tr>
-                                <th>Phone Number</th>
-                                <td><%=vou.getPhone_Number() %>     </td>
-                            </tr>
-                            </thead>
-                       </table>
-                                             
-                        </div>
-                        
+                        <div role="tabpanel" class="tab-pane" id="profile">Profile                           
+		                <div class="panel-body">
+		                    <table class="table table-hover">
+		                        <thead>
+		                        <!-- 테이블 css 정리하고 -->
+		                           <!-- 아이디 맞게 재설정하고 -->
+		                        
+		                        <!-- 세션에 들어갈 코드  세션과 일치시킨 후 -->
+		                            
+		                            <tr>
+		                                <th>이름</th>
+		                                <td><%=vou.getName() %>   </td>
+		                            </tr> 
+		                            <tr>
+		                                <th>이메일</th>
+		                                <td><%=vou.getEmail() %>   </td>
+		                            </tr>
+		                            <tr>
+		                                <th>생년월일</th>
+		                                <td><%=vou.getDate_Of_Birth() %>   </td>
+		                            </tr>
+		                            <tr>
+		                                <th>Gender</th>
+		                                <td><%=(vou.getGender() == 1) ? "남자" : "여자"%></td>
+		                            </tr>                            
+		                            <tr>
+		                                <th>KaKaoID</th>
+		                                <td><%=vou.getKakao_ID() %>     </td>
+		                            </tr>                   
+		                            <tr>
+		                                <th>Phone Number</th>
+		                                <td><%=vou.getPhone_Number() %>     </td>
+		                            </tr>
+		                            </thead>
+		                       </table>	                                             
+		                     </div>
+		                </div>
                         <div role="tabpanel" class="tab-pane" id="messages">작성한글
-                        	<!-- 테이블짜서 내가 작성한 게시물들 출연하게 -->
+                           <!-- 테이블짜서 내가 작성한 게시물들 출연하게 -->
                         <!-- resultList.jsp -->
                     <div class="page-wrapper">
     <div class="container-fluid" align = center>
@@ -331,39 +312,39 @@
   </div>
 </div>    
                       
-
-                        </div> <!-- 게시물 끝 -->
-                        <div role="tabpanel" class="tab-pane" id="settings">동행신청현황
-                        	<!-- 테이블짜서 내가 작성한 동행신청 출연하게 -->
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-            			</div> <!-- 동행 게시물 div 끝 -->
-        		</div>
-    </div>
-</div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         </div>
-                    
-                    
-                    
-                    
-                    
-                    </div>
-                </div>
-            </div>
-            			</div>
-            		</div>
-            	</div>
-            </div>
-        </div>
+                        <div role="tabpanel" class="tab-pane" id="settings">동행신청현황                                               
+                       
+                       
+                       
+                        </div> 
+                  </div>
+    		</div>
+		</div>
+      </div>                              
+     </div>
+  </div>
+</div>                    
+
 </body>
+<script src = "js/profile.js"></script>
 </html>
