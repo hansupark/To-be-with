@@ -1,12 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import = "vo.UserVo" %>
-<%@ page import = "service.UserService" %>
 <!DOCTYPE html>
-<%
-	int LoginUserNum = (int) session.getAttribute("LoginUserNum");
-	//UserService service 
-%>
 <html>
   <head>
     <title>Travalers &mdash; Colorlib Website Template</title>
