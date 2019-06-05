@@ -141,19 +141,19 @@
                            <!-- 테이블짜서 내가 작성한 게시물들 출연하게 -->
                         <!-- resultList.jsp -->
                     <div class="page-wrapper">
-    <div class="container-fluid" align = center>
-        <div class="col-lg-8"><!--게시판 넓이 -->
-            <div class="col-lg-12">
-                <h1 class="page-header">동행 찾기</h1>
-            </div>
-            <div class="row">
-                  <div class="col-lg-12">
-                      <button type="button" onclick = "location.href = 'travelWrite.jsp'" class="btn btn-outline btn-primary pull-right">
-                          <i class="fa fa-edit fa-fw"></i> 동행 만들기
-                      </button>
-                  </div>
-              </div>
-            <div class="panel panel-default">
+                            <div class="container-fluid" align = center>
+        						<div class="col-lg-8"><!--게시판 넓이 -->
+            					<div class="col-lg-12">
+               						 <h1 class="page-header">동행 찾기</h1>
+            					</div>
+            					<div class="row">
+                  					<div class="col-lg-12">
+                   				    <button type="button" onclick = "location.href = 'travelWrite.jsp'" class="btn btn-outline btn-primary pull-right">
+                         		    <i class="fa fa-edit fa-fw"></i> 동행 만들기
+                      				</button>
+                 					 </div>
+              					</div>
+           			<div class="panel panel-default">
                 <div class="panel-heading">동행 찾기 </div>
                 <div class="panel-body">
                     <table class="table table-hover">
@@ -241,110 +241,106 @@
 	                        		%>
 	                        		</td>
 	                        		</tr>
-                        		<%}
-                        	%>                    	
-                        	
-                        </tbody>           
-					</table>
-            	</div>
-        	</div>
-    </div>
-</div>
-	<!-- modal -->
-<!-- Full Height Modal Right -->
-<div class="modal fade right" id="fullHeightModalRight" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+	                        		<%}
+    	                    	%>                    	
+        	                	
+            	        		    </tbody>           
+								</table>
+    	        			</div>
+       			</div>
+    							</div>
+							  </div>
+							  <!-- modal -->
+							  <!-- Full Height Modal Right -->
+							  <div class="modal fade right" id="fullHeightModalRight" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
 
-  <!-- Add class .modal-full-height and then add class .modal-right (or other classes from list above) to set a position to the modal -->
-  <div class="modal-dialog modal-full-height modal-top" role="document">
+ 								 <!-- Add class .modal-full-height and then add class .modal-right (or other classes from list above) to set a position to the modal -->
+ 								 <div class="modal-dialog modal-full-height modal-top" role="document">
 
 
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title w-100" id="myModalLabel"></h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" id = "modal-body">
+   								    <div class="modal-content">
+  	    								 <div class="modal-header">
+        									 <h4 class="modal-title w-100" id="myModalLabel"></h4>
+        									 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+         										 <span aria-hidden="true">&times;</span>
+       										 </button>
+      									 </div>
+     									 <div class="modal-body" id = "modal-body">
       
-      </div>
-      <div class="modal-footer justify-content-center">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+      									 </div>
+    								     <div class="modal-footer justify-content-center">
+    									     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+   										     <button type="button" class="btn btn-primary">Save changes</button>
+     									 </div>
+   									</div>
+ 								 </div>
+							  </div>
 
-<!-- 신고 modal -->
-<div class="modal fade right" id="fullHeightModalRight_report" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+								<!-- 신고 modal -->
+							  <div class="modal fade right" id="fullHeightModalRight_report" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
 
-  <!-- Add class .modal-full-height and then add class .modal-right (or other classes from list above) to set a position to the modal -->
-  <div class="modal-dialog modal-full-height modal-top" role="document">
+								  <!-- Add class .modal-full-height and then add class .modal-right (or other classes from list above) to set a position to the modal -->
+ 							     <div class="modal-dialog modal-full-height modal-top" role="document">
 
 
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title w-100" id="myModalLabel">신고하기</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" id = "modal-body">
-      	<input type = hidden id = travelNum>
-	     <div class="formgroup">
-	       <label for="subject">제목</label>
-	       <input type="text" class="form-control" id="reportTitle" name="reportTitle" placeholder="제목을 입력하세요.">
-	     </div>	 
-	     <div class="formgroup">
-	       <label for=content">내용</label>
-	       <textarea class="form-control" id="reportContent" name="reportContent" rows="3"></textarea>
-	     </div>
-	      <button onclick = "reportInsert_travel(<%=LoginUserNum%>)">신고하기</button> <!-- 로그인 기능 구현시 바꿔야함 -->
-      </div>
-      <div class="modal-footer justify-content-center">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>    
+    								 <div class="modal-content">
+   									    <div class="modal-header">
+       										 <h4 class="modal-title w-100" id="myModalLabel">신고하기</h4>
+       										 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+   										       <span aria-hidden="true">&times;</span>
+       										 </button>
+      									</div>
+     									<div class="modal-body" id = "modal-body">
+      										<input type = hidden id = travelNum>
+	 									    <div class="formgroup">
+	      								    <label for="subject">제목</label>
+	       									<input type="text" class="form-control" id="reportTitle" name="reportTitle" placeholder="제목을 입력하세요.">
+	     									</div>	 
+	     								<div class="formgroup">
+  											 <label for=content">내용</label>
+  											 <textarea class="form-control" id="reportContent" name="reportContent" rows="3"></textarea>
+ 										</div>
+	    								  <button onclick = "reportInsert_travel(<%=LoginUserNum%>)">신고하기</button> <!-- 로그인 기능 구현시 바꿔야함 -->
+      									</div>
+     									<div class="modal-footer justify-content-center">
+									        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        									<button type="button" class="btn btn-primary">Save changes</button>
+      									</div>
+   									 </div>
+ 								 </div>
+							  </div>    
                       
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
+       
                         </div>
                         <div role="tabpanel" class="tab-pane" id="settings">동행신청현황                                               
-                       
+                       		<h1>작성된 동행들</h1>
+							<% 
+							for(TravelVo travel : list_travel)
+							{
+								out.println(travel.getTitle() + "<br>");
+								vo_A.setTravelNum(travel.getTravelNum());
+								list_Apply = ApplyService.getService().getApplyList_ByTravelNum(vo_A);
+									for(ApplyVo apply : list_Apply)
+									{
+										out.println("신청한 회원 넘버 : " + apply.getUserNum() + " ");
+										out.println(String.format("<button onclick = \"applyAccept(%d,%d);\">수락</button><br>",apply.getApplyNum(),apply.getTravelNum()));
+									}
+								}
+								%>
+                       		
                        
                        
                         </div> 
-                  </div>
-    		</div>
-		</div>
-      </div>                              
-     </div>
+                  		</div>
+    				</div>
+			    </div>
+      		</div>                              
+     	</div>
   </div>
 </div>                    
-
+</div>
 </body>
 <script src = "js/profile.js"></script>
 </html>
