@@ -30,16 +30,16 @@ public class TravelUpdateController implements Controller {
 		req.setCharacterEncoding("UTF-8");
 		res.setContentType("text/html; charset = UTF-8"); 
 		
-		int num = Integer.parseInt(req.getParameter("travelNum")); // ¼öÁ¤ÇÒ °Ô½Ã±ÛÀÇ ¹øÈ£¸¦ ¹Ş¾Æ¿Â´Ù. »ç½Ç ±»ÀÌ ÀÖ¾î¾ß µÉ ±î ½Í´Ù..ÀßÂ§ °Ç°¡..
+		int num = Integer.parseInt(req.getParameter("travelNum")); // ìˆ˜ì •í•  ê²Œì‹œê¸€ì˜ ë²ˆí˜¸ë¥¼ ë°›ì•„ì˜¨ë‹¤. ì‚¬ì‹¤ êµ³ì´ ìˆì–´ì•¼ ë  ê¹Œ ì‹¶ë‹¤..ì˜ì§  ê±´ê°€..
 		     TravelVo modify = new TravelVo(); 	
-		      modify.setContent("numodim");
+		      modify.setContent("num");
 		      modify.setTitle("num");
 		      
 		    int result = service.updateTravel(modify);      
 		     
 		    System.out.println(result);
 		
-			HttpUtil.forward(req,res,"resultList.jsp");
+			HttpUtil.forward(req,res,"resultList.jsp");   // ë§ˆì§€ë§‰ ë„˜ê²¨ì¤„ ë•Œ ì´ë ‡ê²Œ í•˜ëŠ” ê²Œ ë§ë‚˜ ì‹¶ ã„· ã…...
 		            
     
 	}}
