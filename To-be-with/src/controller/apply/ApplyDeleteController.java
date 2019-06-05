@@ -26,12 +26,15 @@ public class ApplyDeleteController implements Controller{
 		ApplyService service = ApplyService.getService();
 		int applyNum = Integer.parseInt(req.getParameter("applyNum"));
 		int result = 0;
-		
+		int isApproved;
 		ApplyVo vo = new ApplyVo();
 		vo.setApplyNum(applyNum);
-		result = service.applyDelete(vo);
+		vo = service.getApply(vo);
+		isApproved = (vo.getIsApproved()) ? 1 : 0;
 		
+		result = service.applyDelete(vo);
 		PrintWriter out = res.getWriter();
+		result = (isApproved == 0) ? -1 : 1; 
 		out.write("" + result);
 		return;
 	}

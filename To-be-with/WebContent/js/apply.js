@@ -73,7 +73,50 @@ function applyAccept(_applyNum,_travelNum)
 	);
 	location.reload();
 }
-function showMyApplys()
+function applyCancel(_applyNum,_travelNum)
 {
-	
+	$.ajax
+	(
+	{
+		type : "POST",
+		url : "applyDelete.do",
+		data : 
+			{
+			applyNum : _applyNum
+			},
+		success : function(result)
+		{
+			if(result == 0)
+			{
+				alert("취소 실패");
+			}
+			else if(result == 1)
+			{
+				$.ajax
+				(
+				{
+					type : "POST",
+					url : "traveldecreaseCount.do",
+					data : 
+						{
+							travelNum : _travelNum
+						},
+					success : function(result)
+					{
+						if(result == 1)
+						{
+							alert("수락성공");
+						}
+						else
+						{
+							alert("수락실패 2");
+						}
+					}
+				}		
+				)				
+			}
+		}
+	}
+	);
+	location.reload();
 }

@@ -22,7 +22,7 @@
               <form method="post" action="adminLogin.do">
                 <div class="form-label-group">
                   <input type="text" id="inputEmail" name="adminId" class="form-control" placeholder="Admin ID" required autofocus>
-                  <label for="Admin ID">Email address</label>
+                  <label for="inputEmail">Email address</label>
                 </div>
 
                 <div class="form-label-group">

@@ -266,7 +266,7 @@ public class TravelDao {
 			conn = connect();
 			sql = "update travel set userNum = ?,travelDate = ?,country= ?,region= ?,maxCount = ?, currentCount = ?, title = ?, content = ? where travelNum = ?";
 			psmt = conn.prepareStatement(sql);
-			String date[] = vo.getTravelDate().split("/");
+			String date[] = vo.getTravelDate().split("-");
 			int year = Integer.parseInt(date[0]);
 			int month = Integer.parseInt(date[1]);
 			int day = Integer.parseInt(date[2]);						

@@ -154,8 +154,7 @@
                         		{%>
                         			<tr>
                         			<td><%=String.format("<a href =\"javascript:loadModal(%s,%s);\">%s</a>",
-                        			"\'" + travel.getTitle() + "\'","\'" +travel.getContent() + "\'",travel.getTitle())%></td>
-	                        		<td><%=travel.getUserNum()%></td>
+                        			"\'" + travel.getTitle() + "\'","\'" +travel.getContent() + "\'",travel.getTitle())%></td>	                        		
 	                        		<td>
 	                        		<button onclick = "travelDelete(<%=travel.getTravelNum()%>)">삭제</button>                      		
 	                        		</td>	                        		
@@ -183,7 +182,7 @@
 								travel = TravelService.getService().getTravel(travel);
 							%>
 								나라 : <%=travel.getCountry()%> 지역 : <%=travel.getRegion() %> 날짜 : <%=travel.getTravelDate()%>
-								<button onclick = "applyCancel(<%=apply.getApplyNum()%>,<%=apply.getTravelNum()%>)">취소</button>	
+								<button onclick = "applyCancel(<%=apply.getApplyNum()%>,<%=apply.getTravelNum()%>)">취소</button>	<br>
 							<%
 								
 							}
@@ -224,4 +223,5 @@
 </body>
 <script src = "js/profile.js"></script>
 <script src = "js/travel.js"></script>
+<script src = "js/apply.js"></script>
 </html>

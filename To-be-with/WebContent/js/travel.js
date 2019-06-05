@@ -69,14 +69,11 @@ function loadTravel()
 			}
 			
 			if(country == "프랑스")
-			{
-				
+			{				
 				$("#browsers_2").append("<option value = \"그랑빌\">");
 				$("#browsers_2").append("<option value = \"나르본\">");
 				$("#browsers_2").append("<option value = \"뇌이쉬르센\">");	
-				$("#browsers_2").append("<option value = \"드뢰\">");	
-					
-				
+				$("#browsers_2").append("<option value = \"드뢰\">");										
 			}
 		}		
 	)
