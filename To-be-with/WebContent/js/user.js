@@ -49,5 +49,17 @@ function userApprove(_userNum)
 		}
 	}
 	);
+	
+	$.ajax
+	(
+	{
+		type : "POST",
+		url : "signUpImageDelete.do",
+		data : 
+			{
+			userNum : _userNum
+			}
+	}
+	);
 	location.reload();
 }

@@ -176,7 +176,33 @@ public class singUpImageDao {
 		}
 		catch(Exception e)
 		{
-			System.out.println("ApplyDao : updateImage error : " + e);
+			System.out.println("signUpImageDao : updateImage error : " + e);
+		}
+		finally
+		{
+			close(conn, psmt);
+		}
+		return result;
+	}
+
+	public int deleteSignUpImage(signUpImageVo image) {
+		// TODO Auto-generated method stub
+		int result = 0;
+		Connection conn = null;
+		PreparedStatement psmt = null;
+		String sql = null;
+		
+		try
+		{
+			conn = connect();
+			sql = String.format("delete from signUpImage where userNum = ?");
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, image.getUserNum());		
+			result = psmt.executeUpdate();		
+		}
+		catch(Exception e)
+		{
+			System.out.println("signUpImageDao : deleteImage error : " + e);
 		}
 		finally
 		{

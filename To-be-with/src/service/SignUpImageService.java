@@ -37,4 +37,9 @@ public class SignUpImageService {
 		// TODO Auto-generated method stub
 		return dao.updateSignUpImage(image);
 	}
+
+	public int DeleteSignUpImage(signUpImageVo vo) {
+		// TODO Auto-generated method stub
+		return dao.deleteSignUpImage(vo);
+	}
 }

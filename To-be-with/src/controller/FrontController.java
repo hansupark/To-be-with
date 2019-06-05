@@ -14,6 +14,7 @@ import controller.apply.ApplyAcceptController;
 import controller.apply.ApplyInsertController;
 import controller.report.ReportAcceptController;
 import controller.report.ReportInsertController;
+import controller.signUpImage.SignUpImageDeleteController;
 import controller.signUpImage.SignUpImageInsertController;
 import controller.signUpImage.SignUpImageUpdateController;
 import controller.travel.TravelIncreaseCountController;
@@ -50,6 +51,7 @@ public class FrontController extends HttpServlet{
 		
 		list.put("/uploadimage.do", new SignUpImageInsertController());
 		list.put("/updateimage.do",new SignUpImageUpdateController());
+		list.put("/signUpImageDelete.do",new SignUpImageDeleteController());
 	}
 	
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
