@@ -4,49 +4,73 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>To be with login</title>
-<link type="text/css" rel="stylesheet" href="css/login.css">
+<title>Main for Admin</title>
+
 <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet" href="js/jquery.slim.min.js">
+<link type="text/css" rel="stylesheet" href="js/bootstrap.bundle.min.js">
+
 </head>
-
 <body>
-<div class="container-fluid">
-  <div class="row no-gutter">
-    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
-    <div class="col-md-8 col-lg-6">
-      <div class="login d-flex align-items-center py-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-9 col-lg-8 mx-auto">
-              <h3 class="login-heading mb-4">Welcome Admin User!</h3>
-              <form method="post" action="adminLogin.do">
-                <div class="form-label-group">
-                  <input type="text" id="inputEmail" name="adminId" class="form-control" placeholder="Admin ID" required autofocus>
-                  <label for="inputEmail">Email address</label>
-                </div>
+<!-- Page Content -->
+    <div class="container">
 
-                <div class="form-label-group">
-                  <input type="password" name="adminPw" id="inputPassword" class="form-control" placeholder="Password" required>
-                  <label for="inputPassword">Password</label>
-                </div>
+      <!-- Page Heading -->
+      <h1 class="my-4">Main
+        <small>for Admin</small>
+      </h1>
 
-                <div class="custom-control custom-checkbox mb-3">
-                  <input type="checkbox" class="custom-control-input" id="customCheck1">
-                  <label class="custom-control-label" for="customCheck1">Remember password</label>
-                </div>
-                
-                  
-                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign in</button>
-                 <br>
-                  <a class="samll" href="login.jsp">Go UserLogin page</a>
-               	  
-              </form>
-            </div>
-          </div>
+      <!-- Project One -->
+      <div class="row">
+        <div class="col-md-7">
+          <a href="userlist.jsp">
+            <img class="img-fluid rounded mb-3 mb-md-0" width="700" height="300" src="images/userlist.png" alt="">
+          </a>
+        </div>
+        <div class="col-md-5">
+          <h3>User List</h3>
+          <p>You can watch User List</p>
+          <a class="btn btn-primary" href="Userlist.jsp">Go</a>
         </div>
       </div>
+      <!-- /.row -->
+
+      <hr>
+
+      <!-- Project Two -->
+      <div class="row">
+        <div class="col-md-7">
+          <a href="siren.jsp">
+            <img class="img-fluid rounded mb-3 mb-md-0" width="700" height="300" src="images/사이렌.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-md-5">
+          <h3>Declaration</h3>
+          <p>You can watch and control Declaration List. </p>
+          <a class="btn btn-primary" href="siren.jsp">Go</a>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <hr>
+
+      <!-- Project Three -->
+      <div class="row">
+        <div class="col-md-7">
+          <a href="certificatemanage.jsp">
+            <img class="img-fluid rounded mb-3 mb-md-0" width="700" height="300" src="images/passport.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-md-5">
+          <h3>Certificate</h3>
+          <p>You can accept User's Register.</p>
+          <a class="btn btn-primary" href="certificatemanage.jsp">Go</a>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <hr>
     </div>
-  </div>
-</div>
+    <!-- /.container -->
 </body>
 </html>
