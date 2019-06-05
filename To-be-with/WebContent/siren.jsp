@@ -21,7 +21,7 @@
     <div class="container-fluid">
         <div class="col-lg-8"><!--게시판 넓이 -->
             <div class="col-lg-12">
-                <h1 class="page-header">User List</h1>
+                <h1 class="page-header">Declaration List</h1>
             </div>
             <div class="row">
                   <div class="col-lg-12">
@@ -29,7 +29,7 @@
                   </div>
               </div>
             <div class="panel panel-default">
-                <div class="panel-heading">User List </div>
+                <div class="panel-heading">Declaration List </div>
                 <div class="panel-body">
                     <table class="table table-hover">
                         <thead>
