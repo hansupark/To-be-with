@@ -24,11 +24,22 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>boardList</title>
+<style>
+h1{
+text-align:center;
+}
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+</style>
 </head>
 <body>
-<div class="page-wrapper">
+<div class="container">
     <div class="container-fluid" align = center>
-        <div class="col-lg-8"><!--게시판 넓이 -->
+       
             <div class="col-lg-12">
                 <h1 class="page-header">동행 찾기</h1>
             </div>

@@ -88,7 +88,7 @@
                 
                 
                 <%
-                       		HttpUtil.Login(req, res);
+                       		HttpUtil.Login(request, response);
                     		int LoginUserNum = (int) session.getAttribute("LoginUserNum");
                     		
                             TravelVo vo = new TravelVo(); 
@@ -366,4 +366,5 @@
             </div>
         </div>
 </body>
+<script src = "js/profile.js"></script>
 </html>
