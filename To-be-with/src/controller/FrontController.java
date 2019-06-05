@@ -17,6 +17,7 @@ import controller.report.ReportInsertController;
 import controller.signUpImage.SignUpImageInsertController;
 import controller.signUpImage.SignUpImageUpdateController;
 import controller.travel.TravelIncreaseCountController;
+import controller.travel.TravelInsertController;
 import controller.travel.TravelSearchController;
 import controller.user.UserApproveController;
 import controller.user.UserDeleteController;
@@ -31,6 +32,7 @@ public class FrontController extends HttpServlet{
 	{
 		list = new HashMap<String, Controller>();
 		list.put("/travelSearch.do",new TravelSearchController());
+		list.put("/travelInsert.do",new TravelInsertController());
 		list.put("/travelIncreaseCount.do",new TravelIncreaseCountController());
 		
 		list.put("/reportInsert.do",new ReportInsertController());

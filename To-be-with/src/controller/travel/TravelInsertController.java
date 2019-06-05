@@ -22,31 +22,32 @@ import dao.TravelDao;
 		
 		public void execute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 			// TODO Auto-generated method stub
-			req.setCharacterEncoding("UTF-8");
-			res.setContentType("text/html; charset = UTF-8");	
-           
-			String title = req.getParameter("title");
-		    String content = req.getParameter("content");
-		    String region = req.getParameter("region");
-		    String country = req.getParameter("country");
-		    
-		    
-	       TravelDao Dao = TravelDao.getInstance();
-		   TravelVo TravelVo = new TravelVo();
-	  
-		    TravelVo.setTitle(title);
-	        TravelVo.setContent(content);
-	        TravelVo.setRegion(region);
-	        TravelVo.setCountry(country);
-	        
-		  //TravelDao.setId(sessionID);
+		req.setCharacterEncoding("UTF-8");
+		res.setContentType("text/html; charset = UTF-8");	
+       
+		String title = req.getParameter("title");
+	    String content = req.getParameter("content");
+	    String region = req.getParameter("region");
+	    String country = req.getParameter("country");
+	    String travelDate = req.getParameter("date");
+	    int userNum= (int) req.getSession().getAttribute("LoginUserNum");
+	    int max_Count = (int) req.getSession().getAttribute("max_Count");
+        TravelDao Dao = TravelDao.getInstance();
+	    TravelVo TravelVo = new TravelVo();
+  
+	    TravelVo.setTitle(title);
+        TravelVo.setContent(content);
+        TravelVo.setRegion(region);
+        TravelVo.setCountry(country);
+	     TravelVo.setTravelDate(travelDate);
+		 TravelVo.setUserNum(userNum);
+		 TravelVo.setMax_Count(max_Count);
          TravelService service = TravelService.getService();
          int result = service.insertTravel(TravelVo);
-		System.out.println(result);
+		 System.out.println(result);
 		//res.sendRedirect("reseultList.do");
-		
-	
 		HttpUtil.forward(req,res,"resultList.jsp");
+		return;
 	}
 	
 }

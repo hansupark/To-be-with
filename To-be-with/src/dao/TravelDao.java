@@ -226,13 +226,16 @@ public class TravelDao {
 		try
 		{
 			conn = connect();
-			sql = "insert into travel(userNum,travelDate,country,region) values(?,?,?,?)";
+			sql = "insert into travel(userNum,travelDate,country,region,title,content,maxCount) values(?,?,?,?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1,vo.getUserNum());
 			java.sql.Date date = java.sql.Date.valueOf(vo.getTravelDate());
 			psmt.setDate(2,date);
 			psmt.setString(3,vo.getCountry());
 			psmt.setString(4,vo.getRegion());
+			psmt.setString(5,vo.getTitle());
+			psmt.setString(6,vo.getContent());
+			psmt.setInt(7,vo.getMax_Count());
 			result = psmt.executeUpdate();
 		}
 		catch(Exception e)

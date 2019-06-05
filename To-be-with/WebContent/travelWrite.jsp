@@ -22,7 +22,7 @@
  <h2>게시글 작성 </h2>
  
 <div class="container">
-    <form action="/insertProc" method="post">
+    <form action="travelInsert.do" method="post">
       <div class="formgroup">
         <label for="subject">제목</label>
         <input type="text" class="form-control" id="subject" name="subject" placeholder="제목을 입력하세요.">

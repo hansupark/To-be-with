@@ -43,11 +43,12 @@
 						SignUpImageService service = SignUpImageService.getService(); //signUpImageService 추가하시오
          				ArrayList<signUpImageVo> list = service.getSignUpImages(vo); //서비스함수
          				for(signUpImageVo dto:list){        
+							
 							%>       
 							<tr>
                 			<td><%=dto.getUserNum() %></td>
                 			<td><img src = <%=dto.getImage()%>/></td>
-                			<td><button onclick = "userApprove(<%=(int)session.getAttribute("LoginUserNum")%>)">승인</button></td>                			
+                			<td><button onclick = "userApprove(<%=dto.getUserNum()%>)">승인</button></td>                			
                 			</tr>
 				        <%
  

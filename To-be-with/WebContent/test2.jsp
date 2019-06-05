@@ -18,7 +18,7 @@
 <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <%
-		HttpUtil.Login(reqest, response);
+		HttpUtil.Login(request, response);
 		int LoginUserNum = (int) session.getAttribute("LoginUserNum");
 
 		TravelVo vo = new TravelVo(); 
