@@ -124,8 +124,9 @@
 		                       </table>	                                             
 		                     </div>
 		                </div>
+		                <!-- 테이블짜서 내가 작성한 게시물들 출연하게 -->
+		                
                         <div role="tabpanel" class="tab-pane" id="messages">
-                           <!-- 테이블짜서 내가 작성한 게시물들 출연하게 -->
                         <!-- resultList.jsp -->
                     <div class="page-wrapper">
                             <div class="container-fluid" align = center>
@@ -222,7 +223,15 @@
 								<button onclick = "applyCancel(<%=apply.getApplyNum()%>,<%=apply.getTravelNum()%>)">취소</button>	<br>
 							<%}							
                         		
-							%>                  
+							%>                
+							<!-- 여기에 달력 추가하여 날짜별로 동행 신청한 거 표시 -->
+							
+							<%
+							
+							for(ApplyVo apply:list_Apply){
+								//System.out.println(travel.getTravelDate());
+							}
+							%>
                         </div> 
     				</div>
 			    </div>
