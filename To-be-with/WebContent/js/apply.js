@@ -16,6 +16,11 @@ function applyInsert(_travelNum,_userNum)
 			{
 				alert("신청실패");
 			}
+			
+			else if(result == -1)
+			{
+				alert("해당 날짜에 이미 동행 존재");
+			}
 			else if(result == 1)
 			{
 				alert("신청성공");

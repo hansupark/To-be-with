@@ -8,7 +8,6 @@
 
 <%@ page import = "java.util.ArrayList" %>
 <%@ page import = "controller.HttpUtil.*" %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -140,28 +139,66 @@
            			<div class="panel panel-default">
                 <div class="panel-heading">동행 찾기 </div>
                 <div class="panel-body">
+                <button id = "detail" onclick = "detail();">상세보기</button>     
                     <table class="table table-hover">
                         <thead>
                             <tr>                               
-                                <th>제목</th>                                                           
-                                <th>삭제</th>                         
+                                <th>제목</th>                                                                                                   
+                                <th>나라</th>
+                                <th>지역</th>
+                                <th>날짜</th>               
+                                <th>삭제</th>  
                             </tr>
                         </thead>
                         <tbody>
-                        	
+					      
                         	<%
                         		for(TravelVo travel : list_travel) //여기서도 바꿨고
-                        		{%>
-                        			<tr>
+                        		{
+                        			ArrayList<ApplyVo> list_apply;
+                        			vo_A.setTravelNum(travel.getTravelNum());
+                        			list_apply = ApplyService.getService().getApplyList_ByTravelNum(vo_A);
+                        			
+                        		%>
+                        			<tr id = "travel">
                         			<td><%=String.format("<a href =\"javascript:loadModal(%s,%s);\">%s</a>",
                         			"\'" + travel.getTitle() + "\'","\'" +travel.getContent() + "\'",travel.getTitle())%></td>	                        		
+                        			<td><%=travel.getCountry() %></td>
+                        			<td><%=travel.getRegion() %></td>
+                        			<td><%=travel.getTravelDate()%></td>
 	                        		<td>
 	                        		<button onclick = "travelDelete(<%=travel.getTravelNum()%>)">삭제</button>                      		
-	                        		</td>	                        		
+	                        		</td>	                        			                        		
 	                        		</tr>
-	                        		<%}
-    	                    	%>                    	
-        	                	
+	                        		<tr>
+	                        			<td>
+	                        				<table id = "applyList">
+	                        					<thead>
+						                           <tr>                               
+						                               <th>유저이름</th>                                                                                                   
+						                               <th>수락</th>						                             
+						                           </tr>
+						                       </thead>
+						                       <tbody>
+						                       		<%
+						                       		for(ApplyVo apply : list_apply)
+				                        			{
+						                       			if(!apply.getIsApproved())
+						                       			{
+						                       				UserVo user = new UserVo(); 
+						                       				user.setUserNum(apply.getUserNum());		
+				                       						user = UserService.getInstance().selectUser_byUserNum(user);				                       						
+						                       				out.println("<td>"+user.getName()+"</td> ");
+					                        				out.println(String.format("<td><button onclick = \"applyAccept(%d,%d);\">수락</button></td>",apply.getApplyNum(),apply.getTravelNum()));
+						                       			}
+				                        			}
+						                       		%>
+						                       </tbody>
+	                        				</table>
+	                        			</td>
+	                        		</tr>
+	                        	
+                        		<%} %>	
             	        		    </tbody>           
 								</table>
     	        			</div>
@@ -183,9 +220,8 @@
 							%>
 								나라 : <%=travel.getCountry()%> 지역 : <%=travel.getRegion() %> 날짜 : <%=travel.getTravelDate()%>
 								<button onclick = "applyCancel(<%=apply.getApplyNum()%>,<%=apply.getTravelNum()%>)">취소</button>	<br>
-							<%
-								
-							}
+							<%}							
+                        		
 							%>                  
                         </div> 
     				</div>
@@ -224,4 +260,10 @@
 <script src = "js/profile.js"></script>
 <script src = "js/travel.js"></script>
 <script src = "js/apply.js"></script>
+<script type = "text/javascript">
+function detail()
+{
+	$("#applyList").attr("hidden","true");		
+}
+</script>
 </html>
