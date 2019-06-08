@@ -5,6 +5,8 @@
 <%@page import="vo.ReportVo" %>
 <%@page import="java.util.ArrayList"%>
 <%@page import="service.ReportService" %>
+<%@ page import = "controller.HttpUtil" %>
+<%HttpUtil.AdminLogin(request, response);%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +25,7 @@
 <body>
 <div class="container">
     <div class="container-fluid">
-        
+        	<a href = "mainadmin.jsp">어드민 홈으로</a>
             <div class="col-lg-12">
              
             </div>

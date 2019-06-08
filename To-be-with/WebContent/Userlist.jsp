@@ -5,6 +5,8 @@
 <%@page import="vo.*" %>
 <%@page import="java.util.ArrayList"%>
 <%@page import="service.UserService" %>
+<%@ page import = "controller.HttpUtil" %>
+<%HttpUtil.AdminLogin(request, response);%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +27,7 @@
 <body>
 <div class="container">
     <div class="container-fluid">
-        
+        	<a href = "mainadmin.jsp">어드민 홈으로</a>
             <div class="col-lg-12">
                 <h1 class="page-header">User List</h1>
             </div>

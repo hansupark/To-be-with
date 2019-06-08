@@ -42,7 +42,7 @@ public class UserUpdateController implements Controller {
 	    user.setDate_Of_Birth(birth);
 	    result = service.userUpdate(user);	     
 	    
-	    HttpUtil.forward(req, res,"test2.jsp");
+	    HttpUtil.forward(req, res,"profile.jsp");
         return;
 	}
 }

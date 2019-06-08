@@ -25,4 +25,14 @@ public interface HttpUtil {
 	         System.out.println("HttpUtil forward error 발생 : " + e);
 	      }
 	   }
+	
+	public static void AdminLogin(HttpServletRequest request, HttpServletResponse response) {
+	      try {
+	         if(request.getSession().getAttribute("LoginAdmin") == null)
+	        	 forward(request, response, "login.jsp");         
+	        return;
+	      } catch (Exception e) {
+	         System.out.println("HttpUtil forward error 발생 : " + e);
+	      }
+	   }
 }

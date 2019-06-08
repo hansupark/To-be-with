@@ -5,6 +5,8 @@
 <%@page import="vo.signUpImageVo" %>
 <%@page import="java.util.ArrayList"%>
 <%@page import="service.*" %>
+<%@ page import = "controller.HttpUtil" %>
+<%HttpUtil.AdminLogin(request, response);%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +21,7 @@
 <body>
 <div class="container">
     <div class="container-fluid">
-        
+        	<a href = "mainadmin.jsp">어드민 홈으로</a>
             <div class="col-lg-12">
                 <h1 class="page-header">Certificate Manage</h1>
             </div>

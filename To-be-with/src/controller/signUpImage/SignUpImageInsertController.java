@@ -32,7 +32,7 @@ public class SignUpImageInsertController implements Controller{
 		signUpImageVo image = new signUpImageVo();
 		
 		req.setCharacterEncoding("UTF-8");		
-		String saveDir = context.getRealPath("images_UserCertification");
+		String saveDir = "c:\\images";
 		System.out.println(saveDir);
 		int maxSize = 3 * 1024 * 1024;
 		String encoding = "UTF-8";

@@ -1,9 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import = "controller.HttpUtil" %>
+<%HttpUtil.AdminLogin(request, response);%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Main for Admin</title>
 
 <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
@@ -14,7 +16,7 @@
 <body>
 <!-- Page Content -->
     <div class="container">
-
+	  <a href = "login.jsp">로그인으로</a>
       <!-- Page Heading -->
       <h1 class="my-4">Main
         <small>for Admin</small>

@@ -26,6 +26,7 @@ import controller.travel.TraveldecreaseCountController;
 import controller.user.UserApproveController;
 import controller.user.UserDeleteController;
 import controller.user.UserLoginController;
+import controller.user.UserLogoutController;
 import controller.user.UserRegisterController;
 import controller.user.UserUpdateController;
 
@@ -46,6 +47,7 @@ public class FrontController extends HttpServlet{
 		list.put("/reportApprove.do",new ReportAcceptController());
 		
 		list.put("/userLogin.do",new UserLoginController());
+		list.put("/userLogout.do",new UserLogoutController());
 		list.put("/userRegister.do",new UserRegisterController());
 		list.put("/userDelete.do",new UserDeleteController());
 		list.put("/userApprove.do",new UserApproveController());

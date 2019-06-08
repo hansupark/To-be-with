@@ -8,6 +8,7 @@
 
 <%@ page import = "java.util.ArrayList" %>
 <%@ page import = "controller.HttpUtil.*" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,7 +64,7 @@
                         <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">작성한글</a></li>
                         <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">동행 신청 현황</a></li>
                     </ul>
-                
+                	<a href = "index.jsp">홈으로</a>
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="home">

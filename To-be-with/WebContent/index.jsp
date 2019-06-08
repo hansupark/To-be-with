@@ -1,7 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import = "vo.*" %> <!-- /* 로그인 구현 완료시 다시 수정하기 */ -->
+<%@ page import = "service.*" %>    
+<%@ page import = "controller.HttpUtil" %>
 <!DOCTYPE html>
 <html>
+<%
+	HttpUtil.Login(request, response);
+	int loginUserNum = (int) session.getAttribute("LoginUserNum");
+	UserVo vo = new UserVo();
+	vo.setUserNum(loginUserNum);
+	vo = UserService.getInstance().selectUser_byUserNum(vo);	
+%>
   <head>
     <title>Travalers &mdash; Colorlib Website Template</title>
     <meta charset="utf-8">
@@ -22,7 +32,7 @@
   <body>
   
   <div class="site-wrap">
-
+	<a href = "userLogout.do">로그아웃</a>
     <div class="site-mobile-menu">
       <div class="site-mobile-menu-header">
         <div class="site-mobile-menu-close mt-3">
@@ -61,7 +71,7 @@
                   <a href="#" class="pl-0 pr-3 text-black"><span class="icon-tripadvisor"></span></a>
                 </li>
                 <li>
-                  <a href="#" class="pl-3 pr-3 text-black">user01</a>
+                  <a href="profile.jsp" class="pl-3 pr-3 text-black"><%=vo.getName()%></a>
                 </li>                
                 
               </ul>
