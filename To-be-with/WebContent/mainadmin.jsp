@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import = "controller.HttpUtil" %>
-<%HttpUtil.AdminLogin(request, response);%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +14,7 @@
 <body>
 <!-- Page Content -->
     <div class="container">
-	  <a href = "login.jsp">로그인으로</a>
+
       <!-- Page Heading -->
       <h1 class="my-4">Main
         <small>for Admin</small>
@@ -26,7 +24,7 @@
       <div class="row">
         <div class="col-md-7">
           <a href="userlist.jsp">
-            <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="images/userlist.png" alt="">
           </a>
         </div>
         <div class="col-md-5">
@@ -43,7 +41,7 @@
       <div class="row">
         <div class="col-md-7">
           <a href="siren.jsp">
-            <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="images/사이렌.jpg" alt="">
           </a>
         </div>
         <div class="col-md-5">
@@ -60,7 +58,7 @@
       <div class="row">
         <div class="col-md-7">
           <a href="certificatemanage.jsp">
-            <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="images/passport.jpg" alt="">
           </a>
         </div>
         <div class="col-md-5">
