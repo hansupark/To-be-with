@@ -22,12 +22,12 @@
               <form method="post" action="adminLogin.do"> <!-- adminLogin.do? LoginAdmin.do? adminLogin 안먹히면 LoginAdmin.do로 -->
                 <div class="form-label-group">
                   <input type="text" id="adminId" name="adminId" class="form-control" placeholder="Admin ID" required autofocus>
-                  <label for="Admin ID">Admin ID</label>
+                  <label for="adminId">Admin ID</label>
                 </div>
 
                 <div class="form-label-group">
                   <input type="password" name="adminPw" id="adminPw" class="form-control" placeholder="Password" required>
-                  <label for="inputPassword">Password</label>
+                  <label for="adminPw">Password</label>
                 </div>
 
                 <div class="custom-control custom-checkbox mb-3">
