@@ -58,9 +58,11 @@
 </head>
 <body>
 <div class="container">
+	<a href="index.jsp"><h2>To be with</h2></a>
     <div class="container-fluid" align = center>
        
             <div class="col-lg-12">
+            
                 <h1 class="page-header">동행 찾기</h1>
             </div>
             <div class="row">
@@ -170,6 +172,47 @@
                         </tbody>           
                </table>
                </div>
+               <br>
+               	<h2>신청하기전에, 회원님의 일정을 확인하세요!</h2>
+               	<br>
+               <table class="table table-hover">
+								<tr>
+									<th>날 짜</th>
+									<th>여 행 국 가</th>
+									<th>도 시</th>
+									
+								</tr>
+							<%
+								for(ApplyVo apply : list_Apply_user)
+								{
+									TravelVo travel = new TravelVo();
+									travel.setTravelNum(apply.getTravelNum());
+									travel = TravelService.getService().getTravel(travel);
+	
+									String td = travel.getTravelDate(); //동행 날짜받고
+		
+									String country= travel.getCountry();
+									String destination= travel.getRegion();
+	
+							%>
+								<tr>
+									<td><%=td %></td>
+									<td><%=country %></td>
+									<td><%=destination %></td>
+									
+								</tr>
+	
+	
+							 <%}			
+						
+							 %>		
+								<tr>
+									<td align="center" colspan="3"><h3>Have a nice Trip with your Friends</h3></td>
+								</tr>				
+							</table>	
+               
+               
+               
            </div>
     </div>
 </div>
