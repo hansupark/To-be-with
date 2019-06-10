@@ -8,15 +8,17 @@
 
 <%@ page import = "java.util.ArrayList" %>
 <%@ page import = "controller.HttpUtil.*" %>
+<%@ page import="java.util.*" %>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>To be with login</title>
+<title>To be with Profile</title>
 <link type="text/css" rel="stylesheet" href="css/login.css">
 <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 <%
 		HttpUtil.Login(request, response);
 		int LoginUserNum = (int) session.getAttribute("LoginUserNum");
@@ -33,25 +35,24 @@
 		vou = UserService.getInstance().selectUser_byUserNum(vou);
 		vor.setReporterNum(LoginUserNum);
 
-
-
 		ArrayList<TravelVo> list_travel = TravelService.getService().getTravelLists_ByUserNum(vo);                               		
 		ArrayList<ApplyVo> list_Apply=ApplyService.getService().getApplyList_ByUserNum(vo_A);
-		ArrayList<ReportVo> list_report=ReportService.getService().selectReports_ByReporterNum(vor);
-   
+		ArrayList<ReportVo> list_report=ReportService.getService().selectReports_ByReporterNum(vor);   
 %> 
-                        
 </head>
 <body>
+
 <br>
 <div class="form-group">
+	
    <div class="container" >
+    <h1><a href = "index.jsp">To be with</a></h1>
     <div class="col-me-12"> 
         <div class="portlet light bordered">
             <div class="portlet-title tabbable-line">
                 <div class="caption caption-md">
                     <i class="icon-globe theme-font hide"></i>
-                    <span class="caption-subject font-blue-madison bold uppercase">작성자 정보</span>
+                    
                 </div>
             </div>
             <div class="portlet-body">
@@ -62,12 +63,13 @@
                         <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">업데이트</a></li>
                         <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">프로필</a></li>
                         <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">작성한글</a></li>
-                        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">동행 신청 현황</a></li>
+                        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">나의일정</a></li>
                     </ul>
-                	<a href = "index.jsp">홈으로</a>
+                	
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="home">
+                        <br/>
                             <form action = "userUpdate.do" method = "post">
                               <div class="form-group">
                                 <label for="inputName">Name</label>
@@ -88,7 +90,7 @@
                               <button type="submit" class="btn btn-default">수정</button>
                             </form>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="profile">Profile                           
+                        <div role="tabpanel" class="tab-pane" id="profile">                           
 		                <div class="panel-body">
 		                    <table class="table table-hover">
 		                        <thead>
@@ -126,7 +128,7 @@
 		                     </div>
 		                </div>
 		                <!-- 테이블짜서 내가 작성한 게시물들 출연하게 -->
-		                
+		                <br/>
                         <div role="tabpanel" class="tab-pane" id="messages">
                         <!-- resultList.jsp -->
                     <div class="page-wrapper">
@@ -139,7 +141,7 @@
                   						
               					</div>
            			<div class="panel panel-default">
-                <div class="panel-heading">동행 찾기 </div>
+                <div class="panel-heading"> </div>
                 <div class="panel-body">
                 <button id = "detail" onclick = "detail();">상세보기</button>     
                     <table class="table table-hover">
@@ -211,35 +213,52 @@
                         </div>
                       
                   		</div>
-                  		<div role="tabpanel" class="tab-pane" id="settings">동행신청현황                                               
-                       		<h1>작성된 동행들</h1>
-							<% 
-							for(ApplyVo apply : list_Apply)
-							{
-								TravelVo travel = new TravelVo();
-								travel.setTravelNum(apply.getTravelNum());
-								travel = TravelService.getService().getTravel(travel);
-							%>
-								나라 : <%=travel.getCountry()%> 지역 : <%=travel.getRegion() %> 날짜 : <%=travel.getTravelDate()%>
-								<button onclick = "applyCancel(<%=apply.getApplyNum()%>,<%=apply.getTravelNum()%>)">취소</button>	<br>
-							<%}							
-                        		
-							%>                
-							<!-- 여기에 달력 추가하여 날짜별로 동행 신청한 거 표시 -->
-							
+                  		<div role="tabpanel" class="tab-pane" id="settings">                                               
+                       						          
+							<br/>
+							<!-- 날짜 테이블 -->
+	
+							<table class="table table-hover">
+								<tr>
+									<th>날 짜</th>
+									<th>여 행 국 가</th>
+									<th>도 시</th>
+								</tr>
 							<%
-							
-							for(ApplyVo apply:list_Apply){
-								//System.out.println(travel.getTravelDate());
-							}
+								for(ApplyVo apply : list_Apply)
+								{
+									TravelVo travel = new TravelVo();
+									travel.setTravelNum(apply.getTravelNum());
+									travel = TravelService.getService().getTravel(travel);
+	
+									String td = travel.getTravelDate(); //동행 날짜받고
+		
+									String country= travel.getCountry();
+									String destination= travel.getRegion();
+	
 							%>
+								<tr>
+									<td><%=td %></td>
+									<td><%=country %></td>
+									<td><%=destination %></td>
+								</tr>
+	
+	
+							 <%}			
+						
+							 %>		
+								<tr>
+									<td align="center" colspan="3"><h3>Have a nice Trip with your Friends</h3></td>
+								</tr>				
+							</table>						
+							<!-- 테이블로 만들기 끝!-->							
                         </div> 
     				</div>
 			    </div>
       		</div>                              
      	</div>
-  </div>
-</div>
+  	</div>
+   </div>
 <!-- modal -->
 							  <!-- Full Height Modal Right -->
 							  <div class="modal fade right" id="fullHeightModalRight" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -271,6 +290,7 @@
 <script src = "js/travel.js"></script>
 <script src = "js/apply.js"></script>
 <script type = "text/javascript">
+
 function detail()
 {
 	$("#applyList").attr("hidden","true");		
