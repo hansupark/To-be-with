@@ -1,6 +1,7 @@
 package controller.user;
 
 import java.io.IOException;
+import java.io.Writer;
 import java.text.SimpleDateFormat;
 
 import javax.servlet.ServletException;
@@ -24,7 +25,6 @@ public class UserRegisterController implements Controller {
 		res.setContentType("text/html; charSet = UTF-8");
 		
 		UserService service = UserService.getInstance();
-		int result = 0;
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd");
 		
 		String name= req.getParameter("name");
@@ -53,13 +53,15 @@ public class UserRegisterController implements Controller {
 	    	 }
 	    	 else
 	    	 {
-	    		 System.out.println("동일한 회원 핸드폰 번호 존재");
+	    		 //System.out.println("동일한 회원 핸드폰 번호 존재");
+	    		 res.getWriter().println("<script>alert('동일한 회원 핸드폰 번호 존재.');</script>");
 	    		 HttpUtil.forward(req, res,"register.jsp");
 	    	 }
 	     }
 	     
 	     else {
-	    	 System.out.println("동일한 이메일 존재");
+	    	// System.out.println("동일한 이메일 존재");
+	    	 res.getWriter().println("<script>alert('동일한 이메일 존재.');</script>");
 	    	 HttpUtil.forward(req, res,"register.jsp");
 	     }
 	     return;

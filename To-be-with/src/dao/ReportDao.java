@@ -240,6 +240,7 @@ public class ReportDao {
 		try
 		{
 			sql = String.format("delete from report where reportNum = %d",vo.getReportNum());
+			System.out.println(sql);
 			conn = connect();
 			psmt = conn.prepareStatement(sql);
 			result = psmt.executeUpdate();

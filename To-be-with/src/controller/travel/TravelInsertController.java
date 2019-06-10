@@ -44,7 +44,7 @@ import dao.TravelDao;
          TravelService service = TravelService.getService();
          int result = service.insertTravel(TravelVo);
 		 System.out.println(result);
-		HttpUtil.forward(req,res,"profile.jsp");
+		res.sendRedirect("profile.jsp");
 		return;
 	}
 	

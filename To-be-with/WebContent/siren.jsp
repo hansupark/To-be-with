@@ -64,7 +64,7 @@
             			    <td><%=dto.getContent() %></td>
 			                <td><%=dto.getType() %></td>
         					<td><%=dto.getObjectNum()%></td>
-        					<td><button onclick = "reportApproved(<%=dto.getType()%>,<%=dto.getObjectNum()%>)">승인</button></td>
+        					<td><button onclick = "reportApproved(<%=dto.getType()%>,<%=dto.getObjectNum()%>,<%=dto.getReportNum()%>)">승인</button></td>
 				        </tr>
 				        
 				        <%

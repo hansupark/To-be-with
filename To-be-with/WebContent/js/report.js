@@ -40,7 +40,7 @@ function reportInsert_travel(_reporterNum)
 
 
 
-function reportApproved(_type,_objectNum)
+function reportApproved(_type,_objectNum,_reportNum)
 {
 	if(_type == 0)
 	{
@@ -63,9 +63,33 @@ function reportApproved(_type,_objectNum)
 				else if(result == 1)
 				{
 					alert("승인성공");
+					$.ajax
+					(
+					{
+						type : "POST",
+						url : "reportDelete.do",
+						data : 
+							{
+							reportNum : _reportNum,				
+							},
+						success : function(result)
+						{
+							if(result == 1)
+							{
+								alert("삭제성공");
+							}
+							else
+							{
+								alert("삭제실패");
+							}
+						}
+					}
+					);
+					
 				}
 			}
 		}
 		);
 	}
+	location.reload();
 }

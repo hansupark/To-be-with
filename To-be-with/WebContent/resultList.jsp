@@ -19,25 +19,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
      <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 
-   <link rel="stylesheet" href="/css/jquery-ui.min.css">
+    <!-- <link rel="stylesheet" href="css/jquery-ui.min.css"> -->
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 
-    <script type='text/javascript' src='//code.jquery.com/jquery-1.8.3.js'></script>
+   <!--  <script type='text/javascript' src='//code.jquery.com/jquery-1.8.3.js'></script> -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker3.min.css">
 
     <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
 
-    <script src="/js/bootstrap-datepicker.kr.js" charset="UTF-8"></script>
+    <script src="js/bootstrap-datepicker.kr.js" charset="UTF-8"></script>
  
  
 
@@ -127,7 +126,7 @@
                                  {
                                     System.out.println("case 3");
                                     System.out.println("해당 유저는 신청한 동행이 없습니다.");
-                                    out.println(String.format("<button onclick = applyInsert(%d,%d);>신청</button>",travel.getTravelNum(),LoginUserNum));
+                                    out.println(String.format("<button onclick = applyInsert(%d,%d) class=\"btn btn-primary\";>신청</button>",travel.getTravelNum(),LoginUserNum));
                                  }
                                  %>
                                  </td>
@@ -160,7 +159,7 @@
                                  {
                                     System.out.println("report : case 3");
                                     //System.out.println("해당 유저는 신청한 동행이 없습니다.");
-                                    out.println(String.format("<button onclick = reportModalLoad(%d);>신고</button><br>",travel.getTravelNum()));   
+                                    out.println(String.format("<button class=\"btn btn-danger\"onclick = reportModalLoad(%d);>신고</button><br>",travel.getTravelNum()));   
                                  }
                                  %>
                                  </td>
@@ -223,10 +222,10 @@
           <input type="text" class="form-control" id="reportTitle" name="reportTitle" placeholder="제목을 입력하세요.">
         </div>    
         <div class="formgroup">
-          <label for=content">내용</label>
+          <label for="content">내용</label>       
           <textarea class="form-control" id="reportContent" name="reportContent" rows="3"></textarea>
         </div>
-         <button onclick = "reportInsert_travel(<%=LoginUserNum%>)">신고하기</button> <!-- 로그인 기능 구현시 바꿔야함 -->
+        <button onclick = "reportInsert_travel(<%=LoginUserNum%>)">신고하기</button> <!-- 로그인 기능 구현시 바꿔야함 -->
       </div>
       <div class="modal-footer justify-content-center">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -235,6 +234,7 @@
     </div>
   </div>
 </div>
+
  <div class="input-group date">
        <input type="text" name = "date" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>        
        </div>

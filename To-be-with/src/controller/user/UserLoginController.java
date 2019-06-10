@@ -27,7 +27,7 @@ public class UserLoginController implements Controller{
 		UserVo user = new UserVo();
 		user.setEmail(email);
 		user.setPassword(pw);
-		
+			
 		result = service.userLogin(user);		
 		if(result == -1)
 		{
