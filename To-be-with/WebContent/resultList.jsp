@@ -109,7 +109,8 @@
                                        if(vo.getTravelNum() == travel.getTravelNum()) /* 이미 신청했는지를 검사 */
                                        {
                                           System.out.println("case 1");
-                                          out.println(String.format("<button disabled onclick = applyInsert(%d,%d);>신청</button>",travel.getTravelNum(),LoginUserNum));
+                                          out.println("<button disabled type=\"button\" class=\"btn btn-primary\">신청</button>");
+                                          //out.println(String.format("<button disabled onclick = applyInsert(%d,%d);>신청</button>",travel.getTravelNum(),LoginUserNum));
                                           //아직 login기능 구현 안되서 1로 대체
                                           break;
                                        }
@@ -117,7 +118,8 @@
                                     if(x == list_Apply_user.size())
                                     {
                                        System.out.println("case 2");
-                                       out.println(String.format("<button onclick = applyInsert(%d,%d);>신청</button>",travel.getTravelNum(),LoginUserNum)); 
+                                       out.println(String.format("<button onclick = applyInsert(%d,%d); type=\"button\" class=\"btn btn-primary\">신청</button>",travel.getTravelNum(),LoginUserNum));
+                                       //out.println(String.format("<button onclick = applyInsert(%d,%d);>신청</button>",travel.getTravelNum(),LoginUserNum)); 
                                        //아직 login기능 구현 안되서 1로 대체
                                     }
                                  }
@@ -142,7 +144,7 @@
                                        if(vo.getObjectNum() == travel.getTravelNum()) /* 이미 신청했는지를 검사 */
                                        {
                                           System.out.println("report : case 1");
-                                          out.println(String.format("<button disabled onclick = reportModalLoad(%d);>신고</button><br>",travel.getTravelNum()));   
+                                          out.println(String.format("<button disabled type=\"button\" class=\"btn btn-danger\" onclick = reportModalLoad(%d);>신고</button><br>",travel.getTravelNum()));   
                                           //아직 login기능 구현 안되서 1로 대체
                                           break;
                                        }
@@ -150,7 +152,7 @@
                                     if(x == list_Report_user.size())
                                     {
                                        System.out.println("report : case 2");
-                                       out.println(String.format("<button onclick = reportModalLoad(%d);>신고</button><br>",travel.getTravelNum()));   
+                                       out.println(String.format("<button type=\"button\" class=\"btn btn-danger\" onclick = reportModalLoad(%d);>신고</button><br>",travel.getTravelNum()));   
                                        //아직 login기능 구현 안되서 1로 대체
                                     }
                                  }

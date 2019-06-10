@@ -5,7 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Main for Admin</title>
-
+<%@ page import = "controller.HttpUtil" %>
+<%HttpUtil.AdminLogin(request, response);%>
 <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
 <link type="text/css" rel="stylesheet" href="js/jquery.slim.min.js">
 <link type="text/css" rel="stylesheet" href="js/bootstrap.bundle.min.js">
@@ -14,7 +15,7 @@
 <body>
 <!-- Page Content -->
     <div class="container">
-
+	<a href = "login.jsp">나가기</a>
       <!-- Page Heading -->
       <h1 class="my-4">Main
         <small>for Admin</small>
@@ -23,7 +24,7 @@
       <!-- Project One -->
       <div class="row">
         <div class="col-md-7">
-          <a href="userlist.jsp">
+          <a href="Userlist.jsp">
             <img class="img-fluid rounded mb-3 mb-md-0" src="images/userlist.png" alt="">
           </a>
         </div>
