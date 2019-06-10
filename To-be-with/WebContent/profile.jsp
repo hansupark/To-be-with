@@ -223,6 +223,7 @@
 									<th>날 짜</th>
 									<th>여 행 국 가</th>
 									<th>도 시</th>
+									<th>취 소</th>
 								</tr>
 							<%
 								for(ApplyVo apply : list_Apply)
@@ -241,6 +242,7 @@
 									<td><%=td %></td>
 									<td><%=country %></td>
 									<td><%=destination %></td>
+									<td><button onclick = "applyCancel(<%=apply.getApplyNum()%>,<%=apply.getTravelNum()%>)">취소</button></td>
 								</tr>
 	
 	
