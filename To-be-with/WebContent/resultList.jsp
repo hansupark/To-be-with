@@ -80,6 +80,9 @@
                             <tr>                               
                                 <th>제목</th>
                                 <th>작성자</th>
+                                <th>나라</th>
+                                <th>지역</th>
+                                <th>날짜</th>
                                 <th>신청</th>
                                 <th>현재 신청/최대 신청</th>
                                 <th>신고</th>                            
@@ -98,6 +101,9 @@
                                  <td><%=String.format("<a href =\"javascript:loadModal(%s,%s);\">%s</a>",
                                  "\'" + travel.getTitle() + "\'","\'" +travel.getContent() + "\'",travel.getTitle())%></td>
                                  <td><%=vou.getName()%></td>
+                                 <td><%=travel.getCountry() %></td>                                
+                                 <td><%=travel.getRegion() %></td>                                 
+                                 <td><%=travel.getTravelDate() %></td>
                                  <td>
                                  <%
                                  if(list_Apply_user.size() != 0) //신청을 해놓은게 아예없을때
